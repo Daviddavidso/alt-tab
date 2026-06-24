@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/satoshi-700.woff2" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=30">
+  <link rel="stylesheet" href="styles.css?v=31">
 </head>
 <body>
   <a href="#main" class="skip-link">Перейти к основному содержимому</a>
@@ -78,7 +78,7 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero" tabindex="-1" aria-labelledby="hero-heading">
       <div class="container hero-inner">
-        <p class="hero-badge"><span class="hero-badge-star" aria-hidden="true">✦</span> 150+ проектов запущено · студия <strong>Alt&nbsp;Tab</strong></p>
+        <p class="hero-badge"><span class="hero-badge-star" aria-hidden="true">✦</span> студия веб-разработки <strong>Alt&nbsp;Tab</strong></p>
 
         <h1 id="hero-heading" class="hero-title">Делаем <span class="mark">охуенные</span> сайты под&nbsp;ключ</h1>
 
@@ -101,14 +101,41 @@
       </div>
     </section>
 
-    <!-- ============ DESIGN ============ -->
-    <section class="section center-section" aria-labelledby="design-heading">
+    <!-- ============ STAT STRIP ============ -->
+    <section class="section-stats">
       <div class="container">
-        <div class="center-head reveal">
+        <ul role="list" class="hero-stats">
+          <li class="stat">
+            <span class="stat-num" aria-hidden="true">150+</span>
+            <span class="stat-label" aria-hidden="true">проектов запущено</span>
+            <span class="sr-only">Более 150 проектов запущено</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num" aria-hidden="true">2–4</span>
+            <span class="stat-label" aria-hidden="true">недели до запуска</span>
+            <span class="sr-only">Запуск за 2–4 недели</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num" aria-hidden="true">8 лет</span>
+            <span class="stat-label" aria-hidden="true">на рынке веб-разработки</span>
+            <span class="sr-only">8 лет на рынке веб-разработки</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num" aria-hidden="true">98%</span>
+            <span class="stat-label" aria-hidden="true">клиентов рекомендуют нас</span>
+            <span class="sr-only">98% клиентов рекомендуют нас</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ VALUE: дизайн + адаптив (2 колонки) ============ -->
+    <section class="section" aria-labelledby="design-heading">
+      <div class="container value-grid">
+        <div class="value-text reveal">
+          <p class="eyebrow">Дизайн и адаптив</p>
           <h2 id="design-heading" class="section-title">Дизайн под ваш бренд, а не шаблон</h2>
-          <p class="section-lead center">Рисуем индивидуальный интерфейс под ваши задачи — чисто, современно, с заботой о конверсии.</p>
-          <a href="#contact" class="btn btn-solid">Обсудить проект</a>
-          <p class="reassure-line"><span aria-hidden="true">⚡</span> Бесплатная консультация</p>
+          <p class="section-lead">Рисуем индивидуальный интерфейс под ваши задачи — чисто, современно, с заботой о конверсии. Сайт одинаково выверенно выглядит и работает на телефоне, планшете и десктопе.</p>
         </div>
         <div class="tablet reveal" aria-hidden="true">
           <img src="assets/screen-2.png" alt="" width="1920" height="1080" loading="lazy">
@@ -116,45 +143,62 @@
       </div>
     </section>
 
-    <!-- ============ RESPONSIVE ============ -->
-    <section class="section center-section section-soft" aria-labelledby="resp-heading">
-      <div class="container center-head reveal">
-        <p class="pill-new"><span class="pill-new-dot" aria-hidden="true"></span> Адаптив · десктоп и мобильные</p>
-        <h2 id="resp-heading" class="section-title">Идеально выглядит на любом устройстве</h2>
-        <p class="section-lead center">Сайт автоматически подстраивается под телефон, планшет и десктоп — без потери качества.</p>
-        <a href="#contact" class="btn btn-solid">Обсудить проект</a>
-        <p class="reassure-line"><span aria-hidden="true">⚡</span> Бесплатная консультация</p>
-      </div>
-    </section>
-
     <!-- ============ WORKS / PORTFOLIO ============ -->
-    <section class="section center-section" id="works" tabindex="-1" aria-labelledby="works-heading">
-      <div class="container center-head reveal">
-        <p class="eyebrow center">Портфолио</p>
-        <h2 id="works-heading" class="section-title">Примеры наших работ</h2>
-        <p class="section-lead center">Несколько проектов, которыми гордимся. Посмотрите вживую — кликните по примеру.</p>
-
-        <div class="example reveal">
-          <a class="example-card" href="https://incredibles.dev/?ref=landing.love" target="_blank" rel="noopener noreferrer">
-            <span class="mock-bar" aria-hidden="true"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">incredibles.dev</span></span>
-            <img class="example-shot" src="assets/example-incredibles.png" alt="Пример сайта incredibles.dev" width="1920" height="1080" loading="lazy">
-            <span class="sr-only">(откроется в новой вкладке)</span>
-          </a>
-          <a href="uslugi.html" class="btn btn-ghost example-showall">Смотреть все услуги</a>
+    <section class="section" id="works" tabindex="-1" aria-labelledby="works-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Портфолио</p>
+          <h2 id="works-heading" class="section-title">Примеры наших работ</h2>
+          <p class="section-lead">Несколько проектов, которыми гордимся. Кликните по примеру, чтобы открыть его вживую.</p>
         </div>
+
+        <ul role="list" class="grid grid-2 work-gallery reveal">
+          <li>
+            <a class="example-card" href="https://incredibles.dev/?ref=landing.love" target="_blank" rel="noopener noreferrer">
+              <span class="mock-bar" aria-hidden="true"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">incredibles.dev</span></span>
+              <img class="example-shot" src="assets/example-incredibles.png" alt="Пример сайта incredibles.dev" width="1920" height="1080" loading="lazy">
+              <span class="sr-only">(откроется в новой вкладке)</span>
+            </a>
+          </li>
+          <li>
+            <a class="example-card" href="https://linear.app/" target="_blank" rel="noopener noreferrer">
+              <span class="mock-bar" aria-hidden="true"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-url">linear.app</span></span>
+              <img class="example-shot" src="assets/screen-1.png" alt="Пример сайта linear.app" width="1920" height="1080" loading="lazy">
+              <span class="sr-only">(откроется в новой вкладке)</span>
+            </a>
+          </li>
+        </ul>
+
+        <a href="uslugi.html" class="btn btn-ghost example-showall">Смотреть все работы</a>
       </div>
     </section>
 
-    <!-- ============ TESTIMONIALS (marquee) ============ -->
+    <!-- ============ PROCESS / CAPABILITIES ============ -->
+    <section class="section" id="process" tabindex="-1" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="process-heading" class="section-title">Запустим ваш проект под ключ</h2>
+          <p class="section-lead">Берём всё на себя — от стратегии и дизайна до кода, интеграций, запуска и поддержки.</p>
+        </div>
+
+        <ul role="list" class="grid grid-4 feature-grid">
+          <li class="feat reveal"><h3 class="feat-title">Дизайн под бренд</h3><p class="feat-text">Индивидуальный интерфейс, который выделяет вас и работает на доверие.</p></li>
+          <li class="feat reveal"><h3 class="feat-title">Разработка и интеграции</h3><p class="feat-text">Чистый код, скорость, CRM, оплата и доставка. Тестируем на всех устройствах.</p></li>
+          <li class="feat reveal"><h3 class="feat-title">Запуск и аналитика</h3><p class="feat-text">Публикуем, настраиваем аналитику и метрики, отслеживаем результат.</p></li>
+          <li class="feat reveal"><h3 class="feat-title">Поддержка и развитие</h3><p class="feat-text">Сопровождаем после релиза: доработки, A/B-тесты, скорость и SEO.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF: отзывы + клиенты ============ -->
     <section class="section section-soft" aria-labelledby="reviews-heading">
       <div class="container">
-        <div class="center-head reveal">
+        <div class="t-head reveal">
           <h2 id="reviews-heading" class="section-title">Отзывы клиентов</h2>
-          <p class="section-lead center">Что говорят те, для кого мы уже сделали сайт.</p>
-          <button type="button" class="t-pause" id="t-pause"><span class="t-ico" aria-hidden="true">⏸</span><span class="t-lbl"> Пауза</span></button>
+          <button type="button" class="t-pause" id="t-pause" aria-controls="t-track"><span class="t-ico" aria-hidden="true">⏸</span><span class="t-lbl"> Пауза</span></button>
         </div>
       </div>
-      <div class="t-marquee" role="group" aria-label="Лента отзывов клиентов" tabindex="0">
+      <div class="t-marquee" role="group" aria-label="Отзывы клиентов, прокручиваемая лента" tabindex="0">
         <div class="t-track" id="t-track">
           <figure class="t-card"><blockquote class="t-quote">«Запустили магазин за три недели — продажи с сайта выросли вдвое уже в первый месяц.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">АГ</span><span><span class="t-name">Анна Гаврилова</span><span class="t-role">основатель бренда «Лотос»</span></span></figcaption></figure>
           <figure class="t-card"><blockquote class="t-quote">«Чёткий процесс и ни одного срыва срока. Заявок стало втрое больше прежнего.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">ДК</span><span><span class="t-name">Дмитрий Климов</span><span class="t-role">маркетинг-директор «Контур Финанс»</span></span></figcaption></figure>
@@ -168,33 +212,15 @@
           <figure class="t-card" aria-hidden="true"><blockquote class="t-quote">«Сделали ровно то, что обещали, и даже больше. Рекомендую без оговорок.»</blockquote><figcaption class="t-author"><span class="avatar">ПО</span><span><span class="t-name">Павел Орлов</span><span class="t-role">основатель «Северный»</span></span></figcaption></figure>
         </div>
       </div>
-    </section>
-
-    <!-- ============ INTEGRATIONS ============ -->
-    <section class="section center-section" aria-labelledby="integr-heading">
-      <div class="container center-head reveal">
-        <p class="pill-new"><span class="pill-new-dot" aria-hidden="true"></span> Интеграции</p>
-        <h2 id="integr-heading" class="section-title">Подключим оплату, CRM и доставку</h2>
-        <p class="section-lead center">Магазин, платежи, складской учёт, CRM и аналитику — собираем всё под ключ.</p>
-        <a href="#contact" class="btn btn-solid">Обсудить проект</a>
-        <p class="reassure-line"><span aria-hidden="true">⚡</span> Бесплатная консультация</p>
-      </div>
-    </section>
-
-    <!-- ============ PROCESS / FEATURES ============ -->
-    <section class="section" id="process" tabindex="-1" aria-labelledby="process-heading">
       <div class="container">
-        <div class="center-head reveal">
-          <h2 id="process-heading" class="section-title">Запустим ваш проект под ключ</h2>
-          <p class="section-lead center">Берём всё на себя — от стратегии до публикации и поддержки.</p>
-          <a href="#contact" class="btn btn-solid">Обсудить проект</a>
-        </div>
-
-        <ul role="list" class="grid grid-4 feature-grid">
-          <li class="feat reveal"><h3 class="feat-title">Дизайн под бренд</h3><p class="feat-text">Индивидуальный интерфейс, который выделяет вас и работает на доверие.</p></li>
-          <li class="feat reveal"><h3 class="feat-title">Разработка и интеграции</h3><p class="feat-text">Чистый код, скорость, CRM и оплата. Тестируем на всех устройствах.</p></li>
-          <li class="feat reveal"><h3 class="feat-title">Запуск и аналитика</h3><p class="feat-text">Публикуем, настраиваем аналитику и метрики, отслеживаем результат.</p></li>
-          <li class="feat reveal"><h3 class="feat-title">Поддержка и развитие</h3><p class="feat-text">Сопровождаем после релиза: доработки, A/B-тесты, скорость и SEO.</p></li>
+        <h3 class="section-eyebrow center fo-title">Нам доверяют</h3>
+        <ul role="list" class="fo-strip">
+          <li class="fo-logo">АТЛАС</li>
+          <li class="fo-logo">Nordic</li>
+          <li class="fo-logo">ВОЛНА</li>
+          <li class="fo-logo">Mercato</li>
+          <li class="fo-logo">СФЕРА</li>
+          <li class="fo-logo">Орбита</li>
         </ul>
       </div>
     </section>
@@ -252,31 +278,6 @@
           </li>
         </ul>
         <p class="pricing-note">Нужно нестандартное решение? <a href="#contact">Расскажите о задаче</a> — посчитаем точную смету.</p>
-      </div>
-    </section>
-
-    <!-- ============ SUPPORT ============ -->
-    <section class="section center-section section-soft" aria-labelledby="support-heading">
-      <div class="container center-head reveal">
-        <p class="pill-new"><span class="pill-new-dot" aria-hidden="true"></span> Сопровождение</p>
-        <h2 id="support-heading" class="section-title">Поддержка и развитие после запуска</h2>
-        <p class="section-lead center">Аналитика, A/B-тесты, скорость и SEO — растим результат после релиза, а не бросаем сайт.</p>
-        <a href="#contact" class="btn btn-ghost">Подробнее</a>
-      </div>
-    </section>
-
-    <!-- ============ CLIENTS ============ -->
-    <section class="featured-on" aria-labelledby="clients-heading">
-      <div class="container">
-        <h2 id="clients-heading" class="section-eyebrow center">Нам доверяют</h2>
-        <ul role="list" class="fo-strip">
-          <li class="fo-logo">АТЛАС</li>
-          <li class="fo-logo">Nordic</li>
-          <li class="fo-logo">ВОЛНА</li>
-          <li class="fo-logo">Mercato</li>
-          <li class="fo-logo">СФЕРА</li>
-          <li class="fo-logo">Орбита</li>
-        </ul>
       </div>
     </section>
 

@@ -854,3 +854,35 @@ body.menu-open { overflow: hidden; }
 .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 23px; display: block; }
 img.sc-prev { object-fit: cover; height: auto; }
 img.avatar { object-fit: cover; }
+
+/* ============================================================
+   RESTRUCTURE: stat strip · value 2-col · works gallery · social-proof band
+   ============================================================ */
+
+/* stat strip — reuse .hero-stats as its own thin band */
+.section-stats { padding: clamp(10px, 2.5vw, 22px) 0; }
+.section-stats .hero-stats { margin: 0; }
+
+/* value: text left + tablet right */
+.value-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.value-text .eyebrow { margin-bottom: 14px; }
+.value-text .section-title { margin: 0; }
+.value-text .section-lead { max-width: 48ch; margin-top: 18px; }
+.value-grid .tablet { margin: 0; width: 100%; max-width: 560px; justify-self: center; }
+@media (max-width: 860px) {
+  .value-grid { grid-template-columns: 1fr; gap: 30px; }
+  .value-grid .tablet { margin: 4px auto 0; }
+}
+
+/* works: 2-up gallery of real example screenshots */
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+.work-gallery { list-style: none; padding: 0; margin-top: 8px; }
+.work-gallery > li { list-style: none; }
+.work-gallery .example-card { max-width: none; margin: 0; }
+
+/* social-proof band: left-aligned head row (h2 + pause) above the marquee */
+.t-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.t-head .section-title { margin: 0; }
+.t-head .t-pause { margin-top: 0; flex-shrink: 0; }
+.fo-title { margin-top: clamp(36px, 5vw, 52px); }
