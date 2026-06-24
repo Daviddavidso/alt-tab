@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Услуги — Alt Tab. Что мы делаем</title>
+  <meta name="description" content="Что делает студия Alt Tab: лендинги, корпоративные сайты, интернет-магазины, веб-приложения, редизайн и поддержка. Полное описание услуг.">
+  <meta name="theme-color" content="#141416">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/satoshi-700.woff2" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap">
+  <link rel="stylesheet" href="styles.css?v=25">
+</head>
+<body>
+  <a href="#main" class="skip-link">Перейти к основному содержимому</a>
+
+  <!-- ============ HEADER (dark pill nav) ============ -->
+  <header class="site-header betting-nav" id="top">
+    <div class="container header-inner">
+      <a href="index.html#top" class="brand brand--nav" aria-label="Alt Tab — на главную">
+        <span class="brand-word">Alt&nbsp;Tab<span class="brand-star" aria-hidden="true">⇥</span></span>
+      </a>
+
+      <nav class="pill-nav" aria-label="Основная навигация">
+        <ul role="list">
+          <li><a href="index.html#top" class="pill">
+            <svg class="pic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+            Главная</a></li>
+          <li><a href="uslugi.html" class="pill pill--active" aria-current="page">
+            <svg class="pic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5"/><path d="m3 17 9 5 9-5"/></svg>
+            Услуги</a></li>
+          <li><a href="index.html#works" class="pill">
+            <svg class="pic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="m21 15-5-5L5 21"/></svg>
+            Работы</a></li>
+          <li><a href="index.html#pricing" class="pill">
+            <svg class="pic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8z"/><circle cx="7" cy="7" r="1.3"/></svg>
+            Тарифы</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html#login" class="btn-auth btn-login">Войти</a>
+        <a href="index.html#contact" class="btn-auth btn-register">Оставить заявку</a>
+        <button type="button" id="burger" class="burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span class="burger-box" aria-hidden="true"><span class="burger-line"></span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div id="mobile-menu" class="mobile-menu" hidden>
+    <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Меню" tabindex="-1">
+      <div class="mobile-menu-top">
+        <span class="brand brand--static" aria-hidden="true"><span class="brand-word brand-word--dark">Alt Tab<span class="brand-star">⇥</span></span></span>
+        <button type="button" id="menu-close" class="menu-close" aria-label="Закрыть меню"><span aria-hidden="true">✕</span></button>
+      </div>
+      <nav aria-label="Мобильное меню">
+        <ul role="list" class="mobile-nav-list">
+          <li><a href="index.html#top">Главная</a></li>
+          <li><a href="uslugi.html">Услуги</a></li>
+          <li><a href="index.html#works">Работы</a></li>
+          <li><a href="index.html#pricing">Тарифы</a></li>
+        </ul>
+      </nav>
+      <a href="index.html#contact" class="btn-auth btn-register btn-block" data-close-menu>Оставить заявку</a>
+    </div>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ============ INTRO ============ -->
+    <section class="section center-section" aria-labelledby="uslugi-heading">
+      <div class="container center-head">
+        <p class="eyebrow center">Услуги</p>
+        <h1 id="uslugi-heading" class="section-title">Что мы делаем</h1>
+        <p class="section-lead center">Alt Tab — студия веб-разработки полного цикла. Берём проект от идеи до запуска: стратегия, дизайн, код, интеграции и поддержка. Делаем сайты, которые работают на бизнес — без шаблонов и воды.</p>
+        <a href="index.html#contact" class="btn btn-solid">Обсудить проект</a>
+        <p class="reassure-line"><span aria-hidden="true">⚡</span> Бесплатная консультация — ответим в течение рабочего дня</p>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section-soft" aria-labelledby="what-heading">
+      <div class="container">
+        <div class="center-head">
+          <h2 id="what-heading" class="section-title">Направления</h2>
+          <p class="section-lead center">Шесть форматов под разные задачи — от быстрого лендинга до сложного сервиса.</p>
+        </div>
+
+        <ul role="list" class="grid grid-3 showcase">
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-services.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Лендинги</h3><p class="sc-desc">Продающие одностраничники под рекламу и запуск продукта. Быстро, точно, с фокусом на конверсию. Срок 7–10 дней.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-projects.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Корпоративные сайты</h3><p class="sc-desc">Многостраничные сайты с CMS, блогом и интеграциями. Удобно редактировать, легко развивать.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-shop.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Интернет-магазины</h3><p class="sc-desc">Каталог, корзина, оплата и доставка под ключ. Подключаем CRM, склад и аналитику продаж.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-stats.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Веб-приложения</h3><p class="sc-desc">Личные кабинеты, дашборды и сервисы на современном стеке. Надёжная архитектура под нагрузку.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-gallery.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Редизайн</h3><p class="sc-desc">Переупаковываем устаревший сайт без потери позиций в поиске. Свежий вид и понятная структура.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-faq.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Поддержка и рост</h3><p class="sc-desc">Аналитика, A/B-тесты, скорость и SEO после запуска. Сопровождаем и развиваем результат.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SECTIONS WE BUILD ============ -->
+    <section class="section" aria-labelledby="blocks-heading">
+      <div class="container">
+        <div class="center-head">
+          <h2 id="blocks-heading" class="section-title">Секции, из которых соберём ваш сайт</h2>
+          <p class="section-lead center">Готовые продуманные блоки — соберём страницу под вашу задачу за считанные дни.</p>
+        </div>
+
+        <ul role="list" class="grid grid-3 showcase">
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-links.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Ссылки</h3><p class="sc-desc">Все ваши ссылки и соцсети в одном месте — чтобы вас легко находили.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-socials.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Соцсети</h3><p class="sc-desc">Соберём все площадки вместе, чтобы клиенты легко на вас выходили.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-forms.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Формы</h3><p class="sc-desc">Собираем заявки через удобные формы — растим продажи бизнеса.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-projects.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Проекты</h3><p class="sc-desc">Демонстрируем опыт и кейсы, которые приводят новых клиентов.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-gallery.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Галерея</h3><p class="sc-desc">Показываем визуальные работы и добавляем ссылки для вовлечения.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-skills.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Навыки</h3><p class="sc-desc">Наглядно показываем, в чём вы сильны и чем выделяетесь.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-resume.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Резюме</h3><p class="sc-desc">Подсвечиваем опыт и экспертизу, чтобы выигрывать проекты.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-faq.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Вопросы</h3><p class="sc-desc">Закрываем частые вопросы заранее — экономим время вам и клиентам.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-techstack.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Технологии</h3><p class="sc-desc">Показываем инструменты и технологии, которыми владеете.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-videos.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Видео</h3><p class="sc-desc">Встраиваем видео, чтобы вовлекать и повышать конверсию.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-stats.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Статистика</h3><p class="sc-desc">Показываем ключевые метрики бизнеса — это вызывает доверие.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-testimonials.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Отзывы</h3><p class="sc-desc">Укрепляем доверие реальными отзывами и историями успеха.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-shop.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Магазин</h3><p class="sc-desc">Подключаем магазин и оплату, чтобы продавать прямо с сайта.</p></li>
+          <li class="sc-card"><img class="sc-prev" src="assets/sec-text.jpg" alt="" width="1920" height="1440" loading="lazy"><h3 class="sc-title">Текст</h3><p class="sc-desc">Свободный блок текста — для рассказа о себе или заголовков.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="section center-section section-soft" aria-labelledby="cta-heading">
+      <div class="container center-head">
+        <h2 id="cta-heading" class="section-title">Готовы обсудить проект?</h2>
+        <p class="section-lead center">Расскажите о задаче — предложим решение и смету в течение рабочего дня.</p>
+        <a href="index.html#contact" class="btn btn-solid btn-lg">Оставить заявку</a>
+        <p class="reassure-line"><span aria-hidden="true">⚡</span> Бесплатная консультация — без обязательств</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand brand--static"><span class="brand-word brand-word--dark">Alt Tab<span class="brand-star" aria-hidden="true">⇥</span></span></span>
+        <p class="footer-tagline">Студия веб-разработки. Создаём сайты под ключ — от идеи до запуска.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Нижняя навигация">
+        <div class="footer-col">
+          <h2 class="footer-col-title">Услуги</h2>
+          <ul role="list">
+            <li><a href="uslugi.html">Лендинги</a></li>
+            <li><a href="uslugi.html">Корпоративные сайты</a></li>
+            <li><a href="uslugi.html">Интернет-магазины</a></li>
+            <li><a href="uslugi.html">Веб-приложения</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-col-title">Студия</h2>
+          <ul role="list">
+            <li><a href="index.html#works">Работы</a></li>
+            <li><a href="index.html#pricing">Тарифы</a></li>
+            <li><a href="uslugi.html">Услуги</a></li>
+            <li><a href="index.html#contact">Контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2 class="footer-col-title">Контакты</h2>
+          <ul role="list">
+            <li><a href="mailto:hello@alttab.studio">hello@alttab.studio</a></li>
+            <li><a href="tel:+78001234567">8 800 123-45-67</a></li>
+            <li><a href="https://t.me/" target="_blank" rel="noopener">Telegram <span class="sr-only">(откроется в новой вкладке)</span></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© 2026 Alt Tab. Все права защищены.</p>
+      <p>Создаём сайты с любовью</p>
+    </div>
+  </footer>
+
+  <button type="button" class="chat-fab" aria-label="Открыть чат поддержки">
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+      <path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8 8.38 8.38 0 0 1 8.5-8.5A8.5 8.5 0 0 1 21 11.5z" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="script.js?v=24"></script>
+</body>
+</html>
