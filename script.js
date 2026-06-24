@@ -156,6 +156,19 @@
     });
   }
 
+  /* ============ testimonials marquee pause toggle ============ */
+  var tPause = document.getElementById('t-pause');
+  var tMarquee = document.querySelector('.t-marquee');
+  if (tPause && tMarquee) {
+    tPause.addEventListener('click', function () {
+      var paused = tMarquee.classList.toggle('is-paused');
+      var ico = tPause.querySelector('.t-ico');
+      var lbl = tPause.querySelector('.t-lbl');
+      if (ico) ico.textContent = paused ? '▶' : '⏸';
+      if (lbl) lbl.textContent = paused ? ' Продолжить' : ' Пауза';
+    });
+  }
+
   /* ============ floating chat (demo) ============ */
   var chat = document.querySelector('.chat-fab');
   if (chat) chat.addEventListener('click', function () { /* demo: would open chat widget */ });

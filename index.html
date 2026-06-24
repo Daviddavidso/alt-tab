@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/satoshi-700.woff2" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=29">
+  <link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
   <a href="#main" class="skip-link">Перейти к основному содержимому</a>
@@ -91,15 +91,12 @@
         </form>
         <p class="hero-reassure"><span aria-hidden="true">⚡</span> Бесплатная консультация — ответим в течение рабочего дня</p>
 
-        <div class="devices" aria-hidden="true">
-          <div class="screen-frame">
-            <img class="screen-shot" src="assets/screen-1.png" alt="" width="1920" height="1080" loading="lazy">
-          </div>
-          <div class="phones device-phones">
-            <div class="phone phone--a"><img src="assets/phone2.jpg" alt="" width="804" height="1748" loading="lazy"></div>
-            <div class="phone phone--c"><img src="assets/phone3.jpg" alt="" width="804" height="1748"></div>
-            <div class="phone phone--e"><img src="assets/phone4.jpg" alt="" width="804" height="1748" loading="lazy"></div>
-          </div>
+        <div class="phones" aria-hidden="true">
+          <div class="phone phone--a"><img src="assets/phone1.jpg" alt="" width="804" height="1748" loading="lazy"></div>
+          <div class="phone phone--b"><img src="assets/phone2.jpg" alt="" width="804" height="1748" loading="lazy"></div>
+          <div class="phone phone--c"><img src="assets/phone3.jpg" alt="" width="804" height="1748"></div>
+          <div class="phone phone--d"><img src="assets/phone4.jpg" alt="" width="804" height="1748" loading="lazy"></div>
+          <div class="phone phone--e"><img src="assets/phone5.jpg" alt="" width="804" height="1748" loading="lazy"></div>
         </div>
       </div>
     </section>
@@ -113,8 +110,8 @@
           <a href="#contact" class="btn btn-solid">Обсудить проект</a>
           <p class="reassure-line"><span aria-hidden="true">⚡</span> Бесплатная консультация</p>
         </div>
-        <div class="theme-screen reveal" aria-hidden="true">
-          <div class="screen-frame"><img class="screen-shot" src="assets/screen-2.png" alt="" width="1920" height="1080" loading="lazy"></div>
+        <div class="tablet reveal" aria-hidden="true">
+          <img src="assets/screen-2.png" alt="" width="1920" height="1080" loading="lazy">
         </div>
       </div>
     </section>
@@ -148,16 +145,28 @@
       </div>
     </section>
 
-    <!-- ============ TESTIMONIAL 1 ============ -->
-    <section class="section section-soft" aria-label="Отзыв клиента">
-      <div class="container container-narrow">
-        <figure class="testimonial reveal">
-          <blockquote class="t-quote">«Запустили магазин за три недели — продажи с сайта выросли вдвое уже в первый месяц.»</blockquote>
-          <figcaption class="t-author">
-            <span class="avatar" aria-hidden="true">АГ</span>
-            <span><span class="t-name">Анна Гаврилова</span><span class="t-role">основатель бренда «Лотос»</span></span>
-          </figcaption>
-        </figure>
+    <!-- ============ TESTIMONIALS (marquee) ============ -->
+    <section class="section section-soft" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="center-head reveal">
+          <h2 id="reviews-heading" class="section-title">Отзывы клиентов</h2>
+          <p class="section-lead center">Что говорят те, для кого мы уже сделали сайт.</p>
+          <button type="button" class="t-pause" id="t-pause"><span class="t-ico" aria-hidden="true">⏸</span><span class="t-lbl"> Пауза</span></button>
+        </div>
+      </div>
+      <div class="t-marquee" role="group" aria-label="Лента отзывов клиентов" tabindex="0">
+        <div class="t-track" id="t-track">
+          <figure class="t-card"><blockquote class="t-quote">«Запустили магазин за три недели — продажи с сайта выросли вдвое уже в первый месяц.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">АГ</span><span><span class="t-name">Анна Гаврилова</span><span class="t-role">основатель бренда «Лотос»</span></span></figcaption></figure>
+          <figure class="t-card"><blockquote class="t-quote">«Чёткий процесс и ни одного срыва срока. Заявок стало втрое больше прежнего.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">ДК</span><span><span class="t-name">Дмитрий Климов</span><span class="t-role">маркетинг-директор «Контур Финанс»</span></span></figcaption></figure>
+          <figure class="t-card"><blockquote class="t-quote">«Сделали сложный дашборд понятным. Команда, которой можно доверить продукт целиком.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">ИС</span><span><span class="t-name">Игорь Соколов</span><span class="t-role">CEO «Орбита»</span></span></figcaption></figure>
+          <figure class="t-card"><blockquote class="t-quote">«Сайт получился быстрым и красивым. Клиенты сами пишут, что им приятно пользоваться.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">МЗ</span><span><span class="t-name">Мария Зайцева</span><span class="t-role">владелица студии «Ритм»</span></span></figcaption></figure>
+          <figure class="t-card"><blockquote class="t-quote">«Сделали ровно то, что обещали, и даже больше. Рекомендую без оговорок.»</blockquote><figcaption class="t-author"><span class="avatar" aria-hidden="true">ПО</span><span><span class="t-name">Павел Орлов</span><span class="t-role">основатель «Северный»</span></span></figcaption></figure>
+          <figure class="t-card" aria-hidden="true"><blockquote class="t-quote">«Запустили магазин за три недели — продажи с сайта выросли вдвое уже в первый месяц.»</blockquote><figcaption class="t-author"><span class="avatar">АГ</span><span><span class="t-name">Анна Гаврилова</span><span class="t-role">основатель бренда «Лотос»</span></span></figcaption></figure>
+          <figure class="t-card" aria-hidden="true"><blockquote class="t-quote">«Чёткий процесс и ни одного срыва срока. Заявок стало втрое больше прежнего.»</blockquote><figcaption class="t-author"><span class="avatar">ДК</span><span><span class="t-name">Дмитрий Климов</span><span class="t-role">маркетинг-директор «Контур Финанс»</span></span></figcaption></figure>
+          <figure class="t-card" aria-hidden="true"><blockquote class="t-quote">«Сделали сложный дашборд понятным. Команда, которой можно доверить продукт целиком.»</blockquote><figcaption class="t-author"><span class="avatar">ИС</span><span><span class="t-name">Игорь Соколов</span><span class="t-role">CEO «Орбита»</span></span></figcaption></figure>
+          <figure class="t-card" aria-hidden="true"><blockquote class="t-quote">«Сайт получился быстрым и красивым. Клиенты сами пишут, что им приятно пользоваться.»</blockquote><figcaption class="t-author"><span class="avatar">МЗ</span><span><span class="t-name">Мария Зайцева</span><span class="t-role">владелица студии «Ритм»</span></span></figcaption></figure>
+          <figure class="t-card" aria-hidden="true"><blockquote class="t-quote">«Сделали ровно то, что обещали, и даже больше. Рекомендую без оговорок.»</blockquote><figcaption class="t-author"><span class="avatar">ПО</span><span><span class="t-name">Павел Орлов</span><span class="t-role">основатель «Северный»</span></span></figcaption></figure>
+        </div>
       </div>
     </section>
 
@@ -243,19 +252,6 @@
           </li>
         </ul>
         <p class="pricing-note">Нужно нестандартное решение? <a href="#contact">Расскажите о задаче</a> — посчитаем точную смету.</p>
-      </div>
-    </section>
-
-    <!-- ============ TESTIMONIAL 2 ============ -->
-    <section class="section" aria-label="Отзыв клиента">
-      <div class="container container-narrow">
-        <figure class="testimonial reveal">
-          <blockquote class="t-quote">«Сделали сложный дашборд понятным. Команда, которой можно доверить продукт целиком.»</blockquote>
-          <figcaption class="t-author">
-            <span class="avatar" aria-hidden="true">ИС</span>
-            <span><span class="t-name">Игорь Соколов</span><span class="t-role">CEO «Орбита»</span></span>
-          </figcaption>
-        </figure>
       </div>
     </section>
 
@@ -351,6 +347,6 @@
     </svg>
   </button>
 
-  <script src="script.js?v=24"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>

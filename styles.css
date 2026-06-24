@@ -395,6 +395,32 @@ button { font: inherit; color: inherit; }
 @media (max-width: 620px) { .device-phones { margin-top: -64px; } }
 .theme-screen { margin-top: clamp(40px, 5vw, 64px); }
 
+/* design-section tablet mockup (same style as phones) */
+.tablet { width: clamp(280px, 62vw, 560px); aspect-ratio: 4 / 3; margin: clamp(40px, 5vw, 64px) auto 0; background: #0a0a0a; border-radius: 26px; padding: 12px; box-shadow: 0 26px 54px -22px rgba(0,0,0,.28); }
+.tablet img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block; }
+
+/* testimonials marquee (лента) */
+.t-pause { margin-top: 24px; background: var(--page); border: 1px solid var(--charcoal); border-radius: var(--r-pill); padding: 9px 18px; font-weight: 600; font-size: .9rem; color: var(--charcoal); cursor: pointer; transition: background .15s, color .15s; }
+.t-pause:hover { background: var(--charcoal); color: #fff; }
+.t-marquee { position: relative; margin-top: clamp(36px, 5vw, 52px); overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.t-marquee:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
+.t-track { display: flex; width: max-content; animation: t-scroll 55s linear infinite; }
+.t-marquee:hover .t-track, .t-marquee:focus-within .t-track { animation-play-state: paused; }
+.t-marquee.is-paused .t-track { animation-play-state: paused; }
+@keyframes t-scroll { to { transform: translateX(-50%); } }
+.t-card { flex: 0 0 clamp(280px, 78vw, 360px); margin-right: 20px;
+  background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--r-card);
+  box-shadow: var(--shadow-1); padding: 26px 26px 22px; display: flex; flex-direction: column; }
+.t-card .t-quote { font-size: 1.05rem; line-height: 1.5; letter-spacing: -.01em; color: var(--ink); flex: 1; margin: 0; }
+.t-card .t-author { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
+@media (prefers-reduced-motion: reduce) {
+  .t-track { animation: none; }
+  .t-marquee { overflow-x: auto; }
+  .t-pause { display: none; }
+}
+
 /* ---------- clients ---------- */
 .clients { padding: clamp(40px, 5vw, 60px) 0; border-bottom: 1px solid var(--mist); }
 .clients .section-eyebrow { justify-content: center; text-align: center; margin-bottom: 26px; }
