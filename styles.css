@@ -386,6 +386,14 @@ button { font: inherit; color: inherit; }
 .mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .mock-grid span { height: 84px; background: var(--surface-soft); border: 1px solid var(--mist); border-radius: 10px; }
 
+/* hero laptop mockup (replaces phone fan) */
+.laptop { position: relative; width: 100%; max-width: 840px; margin: clamp(44px, 6vw, 76px) auto 0; }
+.laptop-screen { background: #1c1c20; border-radius: 16px 16px 10px 10px; padding: 12px; box-shadow: 0 28px 56px -22px rgba(0,0,0,.4); }
+.laptop-screen .hero-mock.laptop-site { margin: 0; width: 100%; max-width: none; border: 0; border-radius: 8px; box-shadow: none; }
+.laptop-base { position: relative; width: 108%; left: -4%; height: 14px; background: linear-gradient(180deg, #d2d3d8, #a9aab0); border-radius: 0 0 14px 14px; box-shadow: 0 12px 22px -10px rgba(0,0,0,.25); }
+.laptop-base::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 110px; height: 6px; background: #9a9ba1; border-radius: 0 0 7px 7px; }
+@media (max-width: 620px) { .laptop-base { width: 100%; left: 0; } }
+
 /* ---------- clients ---------- */
 .clients { padding: clamp(40px, 5vw, 60px) 0; border-bottom: 1px solid var(--mist); }
 .clients .section-eyebrow { justify-content: center; text-align: center; margin-bottom: 26px; }
