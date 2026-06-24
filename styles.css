@@ -393,6 +393,7 @@ button { font: inherit; color: inherit; }
 .device-phones { margin: -110px auto 0; position: relative; z-index: 2; }
 .device-phones .phone { width: clamp(92px, 12vw, 146px); }
 @media (max-width: 620px) { .device-phones { margin-top: -64px; } }
+.theme-screen { margin-top: clamp(40px, 5vw, 64px); }
 
 /* ---------- clients ---------- */
 .clients { padding: clamp(40px, 5vw, 60px) 0; border-bottom: 1px solid var(--mist); }
