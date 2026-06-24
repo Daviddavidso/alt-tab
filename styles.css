@@ -386,13 +386,6 @@ button { font: inherit; color: inherit; }
 .mock-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .mock-grid span { height: 84px; background: var(--surface-soft); border: 1px solid var(--mist); border-radius: 10px; }
 
-/* hero device showcase: desktop browser + phones in front */
-.devices { position: relative; width: 100%; max-width: 1000px; margin: clamp(44px, 6vw, 76px) auto 0; }
-.device-desktop { margin: 0 auto; width: 100%; max-width: 920px; }
-.device-phones { margin: -120px auto 0; position: relative; z-index: 2; }
-.device-phones .phone { width: clamp(96px, 12vw, 150px); }
-@media (max-width: 620px) { .device-phones { margin-top: -70px; } }
-
 /* ---------- clients ---------- */
 .clients { padding: clamp(40px, 5vw, 60px) 0; border-bottom: 1px solid var(--mist); }
 .clients .section-eyebrow { justify-content: center; text-align: center; margin-bottom: 26px; }
