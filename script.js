@@ -161,11 +161,9 @@
   var tMarquee = document.querySelector('.t-marquee');
   if (tPause && tMarquee) {
     tPause.addEventListener('click', function () {
-      var paused = tMarquee.classList.toggle('is-paused');
-      var ico = tPause.querySelector('.t-ico');
-      var lbl = tPause.querySelector('.t-lbl');
-      if (ico) ico.textContent = paused ? '▶' : '⏸';
-      if (lbl) lbl.textContent = paused ? ' Продолжить' : ' Пауза';
+      var paused = tPause.getAttribute('aria-pressed') !== 'true';
+      tPause.setAttribute('aria-pressed', String(paused));
+      tMarquee.classList.toggle('is-paused', paused);
     });
   }
 

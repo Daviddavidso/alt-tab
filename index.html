@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/satoshi-700.woff2" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=31">
+  <link rel="stylesheet" href="styles.css?v=32">
 </head>
 <body>
   <a href="#main" class="skip-link">Перейти к основному содержимому</a>
@@ -195,7 +195,10 @@
       <div class="container">
         <div class="t-head reveal">
           <h2 id="reviews-heading" class="section-title">Отзывы клиентов</h2>
-          <button type="button" class="t-pause" id="t-pause" aria-controls="t-track"><span class="t-ico" aria-hidden="true">⏸</span><span class="t-lbl"> Пауза</span></button>
+          <button type="button" id="t-pause" class="t-pause" aria-controls="t-track" aria-pressed="false" aria-label="Прокрутка отзывов">
+            <svg class="t-ico t-ico--pause" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><rect x="7" y="6" width="3.4" height="12" rx="1"/><rect x="13.6" y="6" width="3.4" height="12" rx="1"/></svg>
+            <svg class="t-ico t-ico--play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path d="M8 5.5v13l11-6.5z"/></svg>
+          </button>
         </div>
       </div>
       <div class="t-marquee" role="group" aria-label="Отзывы клиентов, прокручиваемая лента" tabindex="0">
@@ -348,6 +351,6 @@
     </svg>
   </button>
 
-  <script src="script.js?v=30"></script>
+  <script src="script.js?v=32"></script>
 </body>
 </html>
