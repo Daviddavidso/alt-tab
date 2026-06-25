@@ -151,7 +151,7 @@ button { font: inherit; color: inherit; }
 .btn-solid { background: var(--blue-fill); color: #fff; border-color: var(--blue-fill); }
 .btn-solid:hover { transform: translateY(-2px); background: var(--blue-fill-hover); border-color: var(--blue-fill-hover); }
 .btn-ghost { background: var(--page); color: var(--charcoal); border-color: var(--charcoal); }
-.btn-ghost:hover { transform: translateY(-2px); background: var(--charcoal); color: #fff; }
+.btn-ghost:hover { transform: translateY(-2px); background: #ededf2; border-color: var(--ink); }
 .btn-sm { padding: 10px 20px; font-size: .95rem; }
 .btn-lg { padding: 16px 32px; font-size: 1.05rem; }
 .btn-block { display: flex; width: 100%; }
@@ -407,7 +407,7 @@ button { font: inherit; color: inherit; }
 
 /* testimonials marquee (лента) */
 .t-pause { width: 44px; height: 44px; flex-shrink: 0; padding: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--page); border: 1px solid var(--slate); border-radius: 50%; color: var(--charcoal); cursor: pointer; transition: background .15s, color .15s, border-color .15s, transform .15s; }
-.t-pause:hover { background: var(--charcoal); border-color: var(--charcoal); color: #fff; transform: translateY(-1px); }
+.t-pause:hover { background: #ededf2; border-color: var(--ink); transform: translateY(-1px); }
 .t-pause svg { fill: currentColor; display: block; }
 .t-pause .t-ico--play { display: none; }
 .t-pause[aria-pressed="true"] .t-ico--pause { display: none; }
@@ -823,7 +823,7 @@ body.menu-open { overflow: hidden; }
   display: inline-flex; align-items: center; gap: 8px;
   padding: 9px 16px; border-radius: 9999px;
   border: 1px solid transparent;
-  background: rgba(255,255,255,.10); color: #f0f0f2; text-decoration: none;
+  background: transparent; color: #f0f0f2; text-decoration: none;
   font-weight: 500; font-size: .95rem; line-height: 1; white-space: nowrap;
   transition: background .15s, color .15s;
 }
@@ -837,7 +837,7 @@ body.menu-open { overflow: hidden; }
   font-weight: 600; font-size: .95rem; line-height: 1; white-space: nowrap;
   transition: background .15s;
 }
-.btn-login { background: rgba(255,255,255,.10); color: #fff; }
+.btn-login { background: transparent; color: #fff; }
 .btn-login:hover { background: rgba(255,255,255,.18); }
 .btn-register { background: #2563eb; color: #fff; }
 .btn-register:hover { background: #1d4ed8; }
