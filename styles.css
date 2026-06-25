@@ -889,7 +889,7 @@ img.avatar { object-fit: cover; }
 @media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
 .work-gallery { list-style: none; padding: 0; margin-top: 8px; }
 .work-gallery > li { list-style: none; }
-.work-gallery .example-card { max-width: none; margin: 0; }
+.work-gallery .example-card { max-width: 860px; margin: 0 auto; }
 
 /* social-proof band: left-aligned head row (h2 + pause) above the marquee */
 .t-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
