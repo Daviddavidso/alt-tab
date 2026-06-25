@@ -396,8 +396,15 @@ button { font: inherit; color: inherit; }
 .theme-screen { margin-top: clamp(40px, 5vw, 64px); }
 
 /* design-section tablet mockup (same style as phones) */
-.tablet { width: clamp(280px, 62vw, 560px); aspect-ratio: 4 / 3; margin: clamp(40px, 5vw, 64px) auto 0; background: #0a0a0a; border-radius: 26px; padding: 12px; box-shadow: 0 26px 54px -22px rgba(0,0,0,.28); }
-.tablet img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; display: block; }
+.tablet { position: relative; width: clamp(300px, 64vw, 600px); margin: clamp(40px, 5vw, 64px) auto 0; padding: 14px; border-radius: 30px;
+  background: linear-gradient(155deg, #24272e 0%, #15171c 46%, #0b0c10 100%);
+  box-shadow: 0 2px 4px rgba(0,0,0,.30), 0 32px 64px -24px rgba(0,0,0,.40), 0 14px 30px -18px rgba(0,0,0,.30); }
+.tablet::after { content: ""; position: absolute; inset: 0; border-radius: 30px; pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.09), inset 0 1px 1px rgba(255,255,255,.12); }
+.tablet::before { content: ""; position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+  width: 5px; height: 5px; border-radius: 50%; background: #3b3e46; box-shadow: inset 0 0 0 1px rgba(0,0,0,.55); }
+.tablet img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top center;
+  border-radius: 16px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.6); }
 
 /* testimonials marquee (лента) */
 .t-pause { width: 44px; height: 44px; flex-shrink: 0; padding: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--page); border: 1px solid var(--slate); border-radius: 50%; color: var(--charcoal); cursor: pointer; transition: background .15s, color .15s, border-color .15s, transform .15s; }
