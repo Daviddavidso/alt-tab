@@ -276,6 +276,10 @@ button { font: inherit; color: inherit; }
   margin-top: 24px; font-size: clamp(1.05rem, 1.6vw, 1.28rem);
   color: var(--granite); max-width: 56ch;
 }
+@media (max-width: 560px) {
+  .hero-title { font-size: clamp(2.15rem, 9vw, 2.7rem); line-height: 1.08; letter-spacing: -.035em; }
+  .hero-title .mark { padding: .06em .16em; border-radius: 9px; }
+}
 .hero-cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
 .hero-stats {
