@@ -246,7 +246,7 @@ button { font: inherit; color: inherit; }
 /* ---------- hero ---------- */
 .hero {
   position: relative;
-  padding: clamp(48px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
+  padding: clamp(28px, 5vw, 72px) 0 clamp(40px, 6vw, 72px);
   text-align: center;
 }
 .hero-inner { display: flex; flex-direction: column; align-items: center; }
@@ -278,6 +278,7 @@ button { font: inherit; color: inherit; }
   color: #c7c9d1; max-width: 56ch;
 }
 @media (max-width: 560px) {
+  .hero { padding-top: 18px; }
   .hero-title { font-size: clamp(2.5rem, 11vw, 3.1rem); line-height: 1.04; letter-spacing: -.04em; }
   .hero-title .mark { padding: .06em .16em; border-radius: 9px; }
 }
@@ -800,10 +801,10 @@ body.menu-open { overflow: hidden; }
 .brand--nav { margin-right: 8px; }
 .betting-nav .header-inner {
   gap: 12px; align-items: center; padding: 8px 10px 8px 18px;
-  background: rgba(20,22,30,.72);
+  background: rgba(30,33,43,.86);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   backdrop-filter: saturate(180%) blur(24px);
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.14);
   border-radius: 18px;
   box-shadow: 0 14px 34px -16px rgba(0,0,0,.45);
 }
