@@ -233,12 +233,12 @@ button { font: inherit; color: inherit; }
   background: transparent; border: 1px solid var(--charcoal); border-radius: 10px; cursor: pointer;
   font-size: 1.1rem; color: var(--ink);
 }
-.mobile-nav-list { list-style: none; padding: 0; margin: 20px 0 auto; display: flex; flex-direction: column; }
+.mobile-nav-list { list-style: none; padding: 0; margin: 16px -8px auto; display: flex; flex-direction: column; gap: 2px; }
 .mobile-nav-list a {
-  display: block; padding: 18px 4px; font-size: 1.7rem; font-weight: 700; text-decoration: none;
-  border-bottom: 1px solid var(--mist); letter-spacing: -.02em; color: var(--ink);
+  display: block; padding: 14px 16px; border-radius: 12px; font-size: 1.7rem; font-weight: 700; text-decoration: none;
+  letter-spacing: -.02em; color: var(--ink); transition: background .15s;
 }
-.mobile-nav-list a:hover { color: var(--granite); }
+.mobile-nav-list a:hover { background: rgba(255,255,255,.06); }
 
 @keyframes fade { from { opacity: 0; } }
 @keyframes slideDown { from { opacity: 0; transform: translateY(-12px); } }
@@ -405,30 +405,17 @@ button { font: inherit; color: inherit; }
 .tablet img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; border-radius: 12px; }
 
 /* testimonials marquee (лента) */
-.t-pause { width: 44px; height: 44px; flex-shrink: 0; padding: 0; display: inline-flex; align-items: center; justify-content: center; background: var(--page); border: 1px solid var(--slate); border-radius: 50%; color: var(--charcoal); cursor: pointer; transition: background .15s, color .15s, border-color .15s, transform .15s; }
-.t-pause:hover { background: rgba(255,255,255,.12); border-color: var(--ink); transform: translateY(-1px); }
-.t-pause svg { fill: currentColor; display: block; }
-.t-pause .t-ico--play { display: none; }
-.t-pause[aria-pressed="true"] .t-ico--pause { display: none; }
-.t-pause[aria-pressed="true"] .t-ico--play { display: block; }
-.t-marquee { position: relative; margin-top: clamp(36px, 5vw, 52px); overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.t-marquee { position: relative; margin-top: clamp(36px, 5vw, 52px); overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.t-marquee::-webkit-scrollbar { display: none; }
 .t-marquee:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
-.t-track { display: flex; width: max-content; animation: t-scroll 55s linear infinite; }
-.t-marquee:hover .t-track, .t-marquee:focus-within .t-track { animation-play-state: paused; }
-.t-marquee.is-paused .t-track { animation-play-state: paused; }
-@keyframes t-scroll { to { transform: translateX(-50%); } }
-.t-card { flex: 0 0 clamp(260px, 70vw, 320px); margin-right: 20px;
+.t-track { display: flex; width: max-content; padding: 4px 0; }
+.t-card { flex: 0 0 clamp(260px, 70vw, 320px); margin-right: 20px; scroll-snap-align: start;
   background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--r-card);
   box-shadow: var(--shadow-2); padding: 26px 26px 22px; display: flex; flex-direction: column; }
 .t-card .t-quote { font-size: 1.05rem; line-height: 1.5; letter-spacing: -.01em; color: var(--ink); flex: 1; margin: 0; }
 .t-card .t-author { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
-@media (prefers-reduced-motion: reduce) {
-  .t-track { animation: none; }
-  .t-marquee { overflow-x: auto; }
-  .t-pause { display: none; }
-}
 
 /* ---------- clients ---------- */
 .clients { padding: clamp(40px, 5vw, 60px) 0; border-bottom: 1px solid var(--mist); }
@@ -903,7 +890,7 @@ img.avatar { object-fit: cover; }
 @media (max-width: 560px) {
   .section-title { font-size: clamp(1.7rem, 7vw, 2.05rem); line-height: 1.05; letter-spacing: -.03em; }
   .section-lead { font-size: 1.02rem; }
-  .mobile-nav-list a { font-size: 1.2rem; font-weight: 500; padding: 14px 2px; }
+  .mobile-nav-list a { font-size: 1.2rem; font-weight: 500; padding: 13px 16px; }
   .t-card { flex: 0 0 clamp(196px, 60vw, 224px); padding: 18px 18px 16px; }
   .t-card .t-quote { font-size: .92rem; line-height: 1.45; }
   .t-card .avatar { width: 38px; height: 38px; font-size: .8rem; }
