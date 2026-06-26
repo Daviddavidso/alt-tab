@@ -274,8 +274,8 @@ button { font: inherit; color: inherit; }
   box-decoration-break: clone; -webkit-box-decoration-break: clone;
 }
 .hero-sub {
-  margin-top: 24px; font-size: clamp(1.05rem, 1.6vw, 1.28rem);
-  color: var(--granite); max-width: 56ch;
+  margin-top: 24px; font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+  color: #c7c9d1; max-width: 56ch;
 }
 @media (max-width: 560px) {
   .hero-title { font-size: clamp(2.5rem, 11vw, 3.1rem); line-height: 1.04; letter-spacing: -.04em; }
