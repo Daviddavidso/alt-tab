@@ -900,3 +900,16 @@ img.avatar { object-fit: cover; }
 .t-head .section-title { margin: 0; }
 .t-head .t-pause { margin-top: 0; flex-shrink: 0; }
 .fo-title { margin-top: clamp(36px, 5vw, 52px); }
+
+/* ============================================================
+   MOBILE COMPACT PASS — smaller, minimalist on phones (<=560px)
+   appended at EOF so it wins the cascade over base rules
+   ============================================================ */
+@media (max-width: 560px) {
+  .section-title { font-size: clamp(1.7rem, 7vw, 2.05rem); line-height: 1.05; letter-spacing: -.03em; }
+  .section-lead { font-size: 1.02rem; }
+  .mobile-nav-list a { font-size: 1.2rem; font-weight: 500; padding: 14px 2px; }
+  .t-card { flex: 0 0 clamp(238px, 72vw, 278px); padding: 22px 22px 20px; }
+  .t-card .t-quote { font-size: 1rem; line-height: 1.45; }
+  .value-grid .tablet { max-width: 320px; }
+}
