@@ -658,7 +658,7 @@ button { font: inherit; color: inherit; }
 .footer-inner { display: grid; grid-template-columns: 1.4fr 2fr; gap: 40px; }
 @media (max-width: 760px) { .footer-inner { grid-template-columns: 1fr; gap: 36px; } }
 .footer-tagline { margin-top: 18px; color: var(--granite); max-width: 36ch; }
-.footer-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.footer-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 @media (max-width: 460px) { .footer-nav { grid-template-columns: repeat(2, 1fr); } }
 .footer-col-title { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; font-weight: 500; }
 .footer-col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
@@ -674,6 +674,17 @@ button { font: inherit; color: inherit; }
 .socials a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .footer-egg { text-align: center; color: var(--slate); font-size: .9rem; max-width: var(--maxw); margin: 12px auto 0; padding: 0 24px; }
 .footer-egg a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
+
+/* payment methods strip */
+.payments { padding: clamp(26px, 5vw, 40px) 0; border-bottom: 1px solid var(--mist); margin-bottom: clamp(28px, 5vw, 44px); }
+.pay-title { text-align: center; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; font-weight: 500; }
+.pay-strip { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.pay-card { display: inline-flex; align-items: center; justify-content: center; height: 38px; min-width: 58px; padding: 0 14px; background: #fff; border-radius: 8px; box-shadow: var(--shadow-1); }
+.pay-visa { color: #1a1f71; font-weight: 800; font-style: italic; font-size: 1.05rem; letter-spacing: .02em; }
+.pay-mir { color: #0a9d4a; font-weight: 800; font-size: 1.05rem; }
+.pay-sbp { color: #159b8f; font-weight: 800; font-size: 1rem; }
+.pay-mc { width: 38px; height: 24px; display: block; }
+@media (forced-colors: active) { .pay-card { border: 1px solid CanvasText; } }
 
 /* ---------- reveal on scroll (only active when JS present) ---------- */
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
