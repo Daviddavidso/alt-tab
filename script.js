@@ -47,29 +47,56 @@
       else { el.removeAttribute('inert'); el.removeAttribute('aria-hidden'); }
     });
   }
+  var menuClosing = false;
+  var closeTimer = null;
+  function finishClose() {
+    if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+    if (!menu || menu.hidden) { menuClosing = false; return; }
+    menu.hidden = true;
+    menu.classList.remove('is-closing');
+    var p = menu.querySelector('.mobile-menu-panel');
+    if (p) p.removeAttribute('aria-hidden');
+    document.body.classList.remove('menu-open');
+    menuClosing = false;
+  }
   function openMenu() {
     if (!menu) return;
+    if (menuClosing) finishClose();
+    menu.classList.remove('is-closing');
     menu.hidden = false;
     document.body.classList.add('menu-open');
     burger.setAttribute('aria-expanded', 'true');
-    burger.setAttribute('aria-label', 'Close menu');
+    burger.setAttribute('aria-label', 'Закрыть меню');
     setBgInert(true);
     (closeBtn || menu).focus();
   }
   function closeMenu(returnFocus) {
-    if (!menu || menu.hidden) return;
-    menu.hidden = true;
-    document.body.classList.remove('menu-open');
+    if (!menu || menu.hidden || menuClosing) return;
+    var panel = menu.querySelector('.mobile-menu-panel');
+    /* START — synchronously hand control back to the page + return focus */
     burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Open menu');
+    burger.setAttribute('aria-label', 'Открыть меню');
+    if (panel) panel.setAttribute('aria-hidden', 'true');
     setBgInert(false);
     if (returnFocus !== false && burger) burger.focus();
+    if (prefersReduce() || !panel) { finishClose(); return; }
+    /* DEFERRED — play exit animation, then hide */
+    menuClosing = true;
+    menu.classList.add('is-closing');
+    var done = function (e) {
+      if (e && (e.target !== panel || e.animationName !== 'menuOut')) return;
+      panel.removeEventListener('animationend', done);
+      finishClose();
+    };
+    panel.addEventListener('animationend', done);
+    closeTimer = setTimeout(finishClose, 420);
   }
   if (burger) burger.addEventListener('click', openMenu);
   if (closeBtn) closeBtn.addEventListener('click', function () { closeMenu(true); });
   if (menu) {
     menu.addEventListener('click', function (e) { if (e.target === menu) closeMenu(true); });
     menu.addEventListener('keydown', function (e) {
+      if (menuClosing) { if (e.key === 'Escape' || e.key === 'Tab') e.preventDefault(); return; }
       if (e.key === 'Escape') { e.preventDefault(); closeMenu(true); return; }
       if (e.key !== 'Tab') return;
       var panel = menu.querySelector('.mobile-menu-panel');
@@ -82,7 +109,14 @@
     });
   }
   window.matchMedia('(min-width: 861px)').addEventListener('change', function (ev) {
-    if (ev.matches) closeMenu(false);
+    if (!ev.matches || !menu || menu.hidden) return;
+    /* resize to desktop: tear down immediately, no exit animation/flash */
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Открыть меню');
+    var panel = menu.querySelector('.mobile-menu-panel');
+    if (panel) panel.setAttribute('aria-hidden', 'true');
+    setBgInert(false);
+    finishClose();
   });
 
   /* ============ scrollspy → aria-current on nav links ============ */
