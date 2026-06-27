@@ -204,4 +204,10 @@
   /* ============ floating chat (demo) ============ */
   var chat = document.querySelector('.chat-fab');
   if (chat) chat.addEventListener('click', function () { /* demo: would open chat widget */ });
+
+  /* ============ easter egg (console only — невидимо для AT) ============ */
+  try {
+    console.log('%c Alt Tab ⇥ ', 'font:700 26px/1.5 system-ui;color:#fff;background:#2563eb;padding:6px 14px;border-radius:8px;');
+    console.log('%cОй, кто-то залез в консоль 👀  Иди на хуй... да шучу 😄\nРаз ты тут копаешься — ты точно из наших. Нам такие нужны.\nПроект или резюме → hello@alttab.studio', 'font:500 13px/1.7 system-ui;color:#9aa0aa;');
+  } catch (e) {}
 })();

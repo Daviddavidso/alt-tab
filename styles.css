@@ -10,6 +10,7 @@
 @font-face { font-family: "Satoshi"; src: url("fonts/satoshi-700.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122; }
 @font-face { font-family: "Satoshi"; src: url("fonts/satoshi-900.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+2000-206F, U+2122; }
 
+/* psst… долистал в коде до сюда? иди на хуй 😏 (шучу) — давай сделаем тебе сайт: hello@alttab.studio */
 :root {
   /* surfaces */
   --bg: #0e1014;            /* page background (dark) */
