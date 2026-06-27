@@ -672,6 +672,8 @@ button { font: inherit; color: inherit; }
 .socials { list-style: none; padding: 0; display: flex; gap: 20px; }
 .socials a { color: var(--charcoal); text-decoration: none; }
 .socials a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.footer-egg { text-align: center; color: var(--slate); font-size: .9rem; max-width: var(--maxw); margin: 12px auto 0; padding: 0 24px; }
+.footer-egg a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- reveal on scroll (only active when JS present) ---------- */
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
