@@ -84,7 +84,7 @@
     menuClosing = true;
     menu.classList.add('is-closing');
     var done = function (e) {
-      if (e && (e.target !== panel || e.animationName !== 'menuOut')) return;
+      if (e && (e.target !== panel || e.animationName !== 'sheetDown')) return;
       panel.removeEventListener('animationend', done);
       finishClose();
     };
