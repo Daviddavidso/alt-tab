@@ -210,4 +210,71 @@
     console.log('%c Alt Tab ⇥ ', 'font:700 26px/1.5 system-ui;color:#fff;background:#2563eb;padding:6px 14px;border-radius:8px;');
     console.log('%cОй, кто-то залез в консоль 👀  Иди на хуй... да шучу 😄\nРаз ты тут копаешься — ты точно из наших. Нам такие нужны.\nПроект или резюме → hello@alttab.studio', 'font:500 13px/1.7 system-ui;color:#9aa0aa;');
   } catch (e) {}
+
+  /* ============ i18n: language switcher with 9 locales ============ */
+  var TR = {
+    ru: { title:'Alt Tab — студия создания сайтов под ключ', langLabel:'Язык', navHome:'Главная', navWorks:'Работы', navPricing:'Тарифы', cta:'Оставить заявку',
+          hero:['Делаем ','охуенные',' сайты под ключ'], heroSub:'Без шаблонов, воды и сорванных сроков. Дизайн, код и запуск за 2–4 недели.',
+          designTitle:'Дизайн под ваш бренд, а не шаблон', worksTitle:'Примеры наших работ', processTitle:'Запустим ваш проект под ключ',
+          reviewsTitle:'Отзывы клиентов', pricingTitle:'Прозрачные тарифы', finalTitle:'Обсудим ваш проект', payTitle:'Принимаем к оплате' },
+    en: { title:'Alt Tab — turn-key website studio', langLabel:'Language', navHome:'Home', navWorks:'Work', navPricing:'Pricing', cta:'Get a quote',
+          hero:['We build ','kickass',' websites — turn-key'], heroSub:'No templates, no fluff, no missed deadlines. Design, code, launch in 2–4 weeks.',
+          designTitle:'Custom design for your brand, not a template', worksTitle:'Selected work', processTitle:'Your project, end-to-end',
+          reviewsTitle:'Client reviews', pricingTitle:'Transparent pricing', finalTitle:'Let’s discuss your project', payTitle:'We accept' },
+    de: { title:'Alt Tab — Website-Studio aus einer Hand', langLabel:'Sprache', navHome:'Start', navWorks:'Arbeiten', navPricing:'Preise', cta:'Anfrage senden',
+          hero:['Wir bauen ','geile',' Websites — aus einer Hand'], heroSub:'Keine Templates, kein Geschwafel, keine geplatzten Deadlines. Design, Code, Launch in 2–4 Wochen.',
+          designTitle:'Design für Ihre Marke, keine Vorlage', worksTitle:'Ausgewählte Arbeiten', processTitle:'Ihr Projekt — von A bis Z',
+          reviewsTitle:'Kundenstimmen', pricingTitle:'Transparente Preise', finalTitle:'Lass uns über dein Projekt sprechen', payTitle:'Wir akzeptieren' },
+    fr: { title:'Alt Tab — studio de sites clé en main', langLabel:'Langue', navHome:'Accueil', navWorks:'Projets', navPricing:'Tarifs', cta:'Demander un devis',
+          hero:['On fait des sites ','de ouf',', clé en main'], heroSub:'Sans templates, sans blabla, sans dépassement. Design, code, mise en ligne en 2–4 semaines.',
+          designTitle:'Un design pour votre marque, pas un template', worksTitle:'Nos projets', processTitle:'Votre projet, de A à Z',
+          reviewsTitle:'Avis clients', pricingTitle:'Tarifs transparents', finalTitle:'Parlons de votre projet', payTitle:'Nous acceptons' },
+    es: { title:'Alt Tab — estudio de sitios llave en mano', langLabel:'Idioma', navHome:'Inicio', navWorks:'Trabajos', navPricing:'Precios', cta:'Pedir presupuesto',
+          hero:['Hacemos sitios ','de puta madre',' llave en mano'], heroSub:'Sin plantillas, sin paja, sin plazos rotos. Diseño, código y lanzamiento en 2–4 semanas.',
+          designTitle:'Diseño para tu marca, no una plantilla', worksTitle:'Trabajos seleccionados', processTitle:'Tu proyecto, de principio a fin',
+          reviewsTitle:'Opiniones de clientes', pricingTitle:'Precios transparentes', finalTitle:'Hablemos de tu proyecto', payTitle:'Aceptamos' },
+    it: { title:'Alt Tab — studio di siti chiavi in mano', langLabel:'Lingua', navHome:'Home', navWorks:'Lavori', navPricing:'Prezzi', cta:'Richiedi preventivo',
+          hero:['Facciamo siti ','una figata',' chiavi in mano'], heroSub:'Niente template, niente fuffa, niente scadenze saltate. Design, codice e lancio in 2–4 settimane.',
+          designTitle:'Design su misura per il tuo brand, non un template', worksTitle:'Lavori selezionati', processTitle:'Il tuo progetto, dall’idea al lancio',
+          reviewsTitle:'Recensioni dei clienti', pricingTitle:'Prezzi trasparenti', finalTitle:'Parliamo del tuo progetto', payTitle:'Accettiamo' },
+    pl: { title:'Alt Tab — studio stron pod klucz', langLabel:'Język', navHome:'Start', navWorks:'Realizacje', navPricing:'Cennik', cta:'Wyceń projekt',
+          hero:['Robimy ','zajebiste',' strony pod klucz'], heroSub:'Bez szablonów, bez lania wody, bez przesuwanych terminów. Projekt, kod i start w 2–4 tygodnie.',
+          designTitle:'Design pod twoją markę, nie szablon', worksTitle:'Wybrane realizacje', processTitle:'Twój projekt — od pomysłu do startu',
+          reviewsTitle:'Opinie klientów', pricingTitle:'Przejrzysty cennik', finalTitle:'Pogadajmy o projekcie', payTitle:'Akceptujemy' },
+    ro: { title:'Alt Tab — studio de site-uri la cheie', langLabel:'Limbă', navHome:'Acasă', navWorks:'Proiecte', navPricing:'Tarife', cta:'Cere ofertă',
+          hero:['Facem site-uri ','beton',' la cheie'], heroSub:'Fără șabloane, fără vorbe goale, fără termene ratate. Design, cod și lansare în 2–4 săptămâni.',
+          designTitle:'Design pentru brandul tău, nu un șablon', worksTitle:'Proiecte selectate', processTitle:'Proiectul tău, de la cap la coadă',
+          reviewsTitle:'Părerile clienților', pricingTitle:'Tarife transparente', finalTitle:'Hai să discutăm proiectul tău', payTitle:'Acceptăm' },
+    pt: { title:'Alt Tab — estúdio de sites chave na mão', langLabel:'Idioma', navHome:'Início', navWorks:'Projetos', navPricing:'Preços', cta:'Pedir orçamento',
+          hero:['Fazemos sites ','foda',' chave na mão'], heroSub:'Sem templates, sem enrolação, sem prazos furados. Design, código e lançamento em 2–4 semanas.',
+          designTitle:'Design para sua marca, não um template', worksTitle:'Projetos selecionados', processTitle:'Seu projeto, do início ao fim',
+          reviewsTitle:'Avaliações de clientes', pricingTitle:'Preços transparentes', finalTitle:'Vamos conversar sobre seu projeto', payTitle:'Aceitamos' }
+  };
+  var LOCALES = ['ru','en','de','fr','es','it','pl','ro','pt'];
+  function applyLocale(loc) {
+    if (!TR[loc]) loc = 'ru';
+    var t = TR[loc];
+    document.documentElement.lang = loc;
+    document.title = t.title;
+    var md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute('content', t.heroSub);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (t[key] != null) el.textContent = t[key];
+    });
+    var hero = document.querySelector('[data-i18n-html="hero"]');
+    if (hero && t.hero) {
+      hero.textContent = '';
+      hero.appendChild(document.createTextNode(t.hero[0]));
+      var m = document.createElement('span'); m.className = 'mark'; m.textContent = t.hero[1];
+      hero.appendChild(m);
+      hero.appendChild(document.createTextNode(t.hero[2]));
+    }
+    try { localStorage.setItem('locale', loc); } catch (e) {}
+    var sel = document.getElementById('lang-select'); if (sel) sel.value = loc;
+  }
+  var initLoc = 'ru';
+  try { var s = localStorage.getItem('locale'); if (s && LOCALES.indexOf(s) > -1) initLoc = s; } catch (e) {}
+  applyLocale(initLoc);
+  var langSel = document.getElementById('lang-select');
+  if (langSel) langSel.addEventListener('change', function () { applyLocale(langSel.value); });
 })();

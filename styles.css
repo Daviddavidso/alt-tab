@@ -282,7 +282,7 @@ button { font: inherit; color: inherit; }
 .hero-eyebrow .kbd { min-width: 23px; height: 23px; }
 .hero-title {
   margin-top: 24px;
-  font-size: clamp(2.6rem, 7vw + 1rem, 7.4rem);
+  font-size: clamp(3rem, 9vw + 1rem, 9rem);
   font-weight: 500;
   line-height: .9;
   letter-spacing: -.055em;
@@ -856,6 +856,10 @@ body.menu-open { overflow: hidden; }
 .pill .pic { width: 18px; height: 18px; flex: none; }
 .pill:hover { background: rgba(255,255,255,.18); color: #fff; }
 .pill--active, .pill--active:hover { background: #2563eb; color: #fff; }
+
+.lang-select { appearance: none; -webkit-appearance: none; background: rgba(255,255,255,.10); color: #fff; border: 0; border-radius: 9999px; padding: 8px 10px; font: 600 .85rem/1 var(--font); cursor: pointer; min-width: 56px; text-align: center; }
+.lang-select:hover { background: rgba(255,255,255,.18); }
+.lang-select option { background: #1f222b; color: #fff; }
 
 .btn-auth {
   display: inline-flex; align-items: center; justify-content: center;
