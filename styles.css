@@ -293,7 +293,7 @@ button { font: inherit; color: inherit; }
 .mark {
   position: relative;
   background: var(--wash); color: var(--ink);
-  padding: .02em .14em .04em; border-radius: 14px;
+  padding: 0 .12em; border-radius: 10px;
   box-decoration-break: clone; -webkit-box-decoration-break: clone;
 }
 .hero-sub {
@@ -303,7 +303,7 @@ button { font: inherit; color: inherit; }
 @media (max-width: 560px) {
   .hero { padding-top: 18px; }
   .hero-title { font-size: clamp(2.5rem, 11vw, 3.1rem); line-height: 1.04; letter-spacing: -.04em; }
-  .hero-title .mark { padding: .04em .14em; border-radius: 10px; }
+  .hero-title .mark { padding: .06em .16em; border-radius: 9px; }
 }
 .hero-cta { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
 
