@@ -859,7 +859,6 @@ body.menu-open { overflow: hidden; }
 .pill--active, .pill--active:hover { background: #2563eb; color: #fff; }
 
 .lang-select { appearance: none; -webkit-appearance: none; background: rgba(255,255,255,.10); color: #fff; border: 0; border-radius: 9999px; padding: 8px 10px; font: 600 .85rem/1 var(--font); cursor: pointer; min-width: 56px; text-align: center; }
-.lang-select:hover { background: rgba(255,255,255,.18); }
 .lang-select option { background: #1f222b; color: #fff; }
 
 .btn-auth {
