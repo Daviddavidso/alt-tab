@@ -282,18 +282,19 @@ button { font: inherit; color: inherit; }
 .hero-eyebrow .kbd { min-width: 23px; height: 23px; }
 .hero-title {
   margin-top: 24px;
-  font-size: clamp(3rem, 9vw + 1rem, 9rem);
+  font-size: clamp(2.6rem, 6.5vw + .8rem, 6.4rem);
   font-weight: 500;
   line-height: .9;
   letter-spacing: -.055em;
   color: var(--ink);
   max-width: 14ch;
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 .mark {
   position: relative;
   background: var(--wash); color: var(--ink);
   padding: 0 .12em; border-radius: 10px;
+  white-space: nowrap;
   box-decoration-break: clone; -webkit-box-decoration-break: clone;
 }
 .hero-sub {
