@@ -686,7 +686,7 @@ button { font: inherit; color: inherit; }
 .footer-egg a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 
 /* huge mail banner at the very bottom (Lebedev-style, monochrome) */
-.mail-banner { background: #000; width: 100%; padding: clamp(64px, 12vw, 168px) 24px; text-align: center; }
+.mail-banner { background: var(--bg); width: 100%; padding: clamp(64px, 12vw, 168px) 24px; text-align: center; }
 .mail-banner-eyebrow { display: block; color: rgba(255,255,255,.7); font: 600 clamp(.78rem, 1.4vw, 1rem)/1 var(--font); text-transform: uppercase; letter-spacing: .2em; margin-bottom: clamp(20px, 3.5vw, 44px); }
 .mail-banner-link { display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(1.7rem, 8.4vw, 9.5rem); letter-spacing: -.03em; line-height: 1; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .14em; }
 .mail-banner-link:hover { opacity: .92; }
