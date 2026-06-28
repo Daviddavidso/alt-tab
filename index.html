@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/satoshi-700.woff2" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=69">
+  <link rel="stylesheet" href="styles.css?v=71">
   <script>try{var l=localStorage.getItem('locale');if(l&&/^(ru|en|de|fr|es|it|pl|ro|pt)$/.test(l))document.documentElement.lang=l;}catch(e){}</script>
 </head>
 <body>
@@ -51,18 +51,20 @@
       </nav>
 
       <div class="header-actions">
-        <label for="lang-select" class="sr-only" data-i18n="langLabel">Язык</label>
-        <select id="lang-select" class="lang-select">
-          <option value="ru" lang="ru" selected>RU</option>
-          <option value="en" lang="en">EN</option>
-          <option value="de" lang="de">DE</option>
-          <option value="fr" lang="fr">FR</option>
-          <option value="es" lang="es">ES</option>
-          <option value="it" lang="it">IT</option>
-          <option value="pl" lang="pl">PL</option>
-          <option value="ro" lang="ro">RO</option>
-          <option value="pt" lang="pt">PT</option>
-        </select>
+        <div class="lang-pop">
+          <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-menu" aria-label="Язык" data-i18n-attr='{"aria-label":"langLabel"}'>RU</button>
+          <ul class="lang-menu" id="lang-menu" role="listbox" aria-label="Язык" hidden>
+            <li role="option" tabindex="-1" data-locale="ru" lang="ru" aria-selected="true">Русский</li>
+            <li role="option" tabindex="-1" data-locale="en" lang="en" aria-selected="false">English</li>
+            <li role="option" tabindex="-1" data-locale="de" lang="de" aria-selected="false">Deutsch</li>
+            <li role="option" tabindex="-1" data-locale="fr" lang="fr" aria-selected="false">Français</li>
+            <li role="option" tabindex="-1" data-locale="es" lang="es" aria-selected="false">Español</li>
+            <li role="option" tabindex="-1" data-locale="it" lang="it" aria-selected="false">Italiano</li>
+            <li role="option" tabindex="-1" data-locale="pl" lang="pl" aria-selected="false">Polski</li>
+            <li role="option" tabindex="-1" data-locale="ro" lang="ro" aria-selected="false">Română</li>
+            <li role="option" tabindex="-1" data-locale="pt" lang="pt" aria-selected="false">Português</li>
+          </ul>
+        </div>
         <a href="#contact" class="btn-auth btn-register" data-i18n="cta">Оставить заявку</a>
         <button type="button" id="burger" class="burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
           <span class="burger-box" aria-hidden="true"><span class="burger-line"></span></span>
@@ -329,6 +331,6 @@
     <p class="footer-egg" data-i18n-html="egg">Ну всё, ты долистал до самого низа. Иди на&nbsp;хуй <span aria-hidden="true">😉</span> — <a href="#contact">шутим, давай работать</a>.</p>
   </footer>
 
-  <script src="script.js?v=62"></script>
+  <script src="script.js?v=71"></script>
 </body>
 </html>

@@ -858,12 +858,18 @@ body.menu-open { overflow: hidden; }
 .pill:hover { background: rgba(255,255,255,.18); color: #fff; }
 .pill--active, .pill--active:hover { background: #2563eb; color: #fff; }
 
-.lang-select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background: transparent; color: #fff; border: 0; outline: none; box-shadow: none; border-radius: 9999px; padding: 8px 10px; font: 600 .85rem/1 var(--font); cursor: pointer; min-width: 44px; text-align: center; }
-.lang-select option { background: #1f222b; color: #fff; }
-.lang-select:hover, .lang-select:active { outline: none; box-shadow: none; background: transparent; }
-.lang-select:focus { outline: none; box-shadow: none; }
-.lang-select:focus:not(:focus-visible) { outline: none; box-shadow: none; }
-.betting-nav .lang-select:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: none; }
+.lang-pop { position: relative; display: inline-block; }
+.lang-btn { background: transparent; border: 0; color: #fff; font: 600 .85rem/1 var(--font); cursor: pointer; padding: 8px 10px; min-width: 36px; }
+.lang-btn:focus { outline: none; }
+.lang-btn:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 6px; }
+.lang-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 160px; background: rgba(22,24,30,.96); -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); border-radius: 12px; box-shadow: 0 18px 40px -14px rgba(0,0,0,.6); padding: 6px; list-style: none; margin: 0; z-index: 110; }
+.lang-menu[hidden] { display: none; }
+.lang-menu li { padding: 9px 12px; border-radius: 8px; color: #fff; cursor: pointer; font-size: .95rem; }
+.lang-menu li:hover { background: rgba(255,255,255,.08); }
+.lang-menu li[aria-selected="true"] { background: rgba(255,255,255,.10); font-weight: 600; }
+.lang-menu li[aria-selected="true"]::before { content: "✓ "; opacity: .85; }
+.lang-menu li:focus { outline: none; }
+.lang-menu li:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
 
 .btn-auth {
   display: inline-flex; align-items: center; justify-content: center;

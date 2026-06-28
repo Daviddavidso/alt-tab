@@ -314,11 +314,60 @@
       } catch (e) {}
     });
     try { localStorage.setItem('locale', loc); } catch (e) {}
-    var sel = document.getElementById('lang-select'); if (sel) sel.value = loc;
+    /* sync custom button + listbox state */
+    var btn = document.getElementById('lang-btn');
+    if (btn) btn.textContent = loc.toUpperCase();
+    document.querySelectorAll('#lang-menu li[role="option"]').forEach(function (li) {
+      li.setAttribute('aria-selected', li.getAttribute('data-locale') === loc ? 'true' : 'false');
+    });
   }
   var initLoc = 'ru';
   try { var s = localStorage.getItem('locale'); if (s && LOCALES.indexOf(s) > -1) initLoc = s; } catch (e) {}
   applyLocale(initLoc);
-  var langSel = document.getElementById('lang-select');
-  if (langSel) langSel.addEventListener('change', function () { applyLocale(langSel.value); });
+
+  /* ============ custom language listbox ============ */
+  var langBtn = document.getElementById('lang-btn');
+  var langMenu = document.getElementById('lang-menu');
+  if (langBtn && langMenu) {
+    var langOpts = Array.prototype.slice.call(langMenu.querySelectorAll('li[role="option"]'));
+    function openLang() {
+      langMenu.hidden = false;
+      langBtn.setAttribute('aria-expanded', 'true');
+      var cur = langMenu.querySelector('li[aria-selected="true"]') || langOpts[0];
+      if (cur) cur.focus();
+    }
+    function closeLang(returnFocus) {
+      if (langMenu.hidden) return;
+      langMenu.hidden = true;
+      langBtn.setAttribute('aria-expanded', 'false');
+      if (returnFocus !== false) langBtn.focus();
+    }
+    langBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (langMenu.hidden) openLang(); else closeLang();
+    });
+    langBtn.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLang(); }
+    });
+    langOpts.forEach(function (li) {
+      li.addEventListener('click', function (e) {
+        e.stopPropagation();
+        applyLocale(li.getAttribute('data-locale'));
+        closeLang(true);
+      });
+      li.addEventListener('keydown', function (e) {
+        var idx = langOpts.indexOf(li);
+        if (e.key === 'ArrowDown') { e.preventDefault(); langOpts[(idx + 1) % langOpts.length].focus(); }
+        else if (e.key === 'ArrowUp') { e.preventDefault(); langOpts[(idx - 1 + langOpts.length) % langOpts.length].focus(); }
+        else if (e.key === 'Home') { e.preventDefault(); langOpts[0].focus(); }
+        else if (e.key === 'End') { e.preventDefault(); langOpts[langOpts.length - 1].focus(); }
+        else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); applyLocale(li.getAttribute('data-locale')); closeLang(true); }
+        else if (e.key === 'Escape') { e.preventDefault(); closeLang(true); }
+        else if (e.key === 'Tab') { closeLang(false); }
+      });
+    });
+    document.addEventListener('mousedown', function (e) {
+      if (!langMenu.hidden && !langMenu.contains(e.target) && e.target !== langBtn) closeLang(false);
+    });
+  }
 })();
