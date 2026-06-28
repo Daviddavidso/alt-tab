@@ -279,10 +279,29 @@
     fr:{mailEyebrow:'Un projet ?'}, es:{mailEyebrow:'¿Tienes un proyecto?'}, it:{mailEyebrow:'Hai un progetto?'},
     pl:{mailEyebrow:'Masz projekt?'}, ro:{mailEyebrow:'Ai un proiect?'}, pt:{mailEyebrow:'Tem um projeto?'}
   };
-  /* merge EXT + STATS + MAIL into TR */
+  var MORE = {
+    ru:{designEyebrow:'Дизайн и адаптив', worksEyebrow:'Портфолио', contactTitle:'Мы на связи', newTab:'(откроется в новой вкладке)'},
+    en:{designEyebrow:'Design & responsive', worksEyebrow:'Portfolio', contactTitle:'We’re in touch', newTab:'(opens in a new tab)'},
+    de:{designEyebrow:'Design & Responsive', worksEyebrow:'Portfolio', contactTitle:'Wir sind erreichbar', newTab:'(öffnet in neuem Tab)'},
+    fr:{designEyebrow:'Design & responsive', worksEyebrow:'Portfolio', contactTitle:'On reste en contact', newTab:'(s’ouvre dans un nouvel onglet)'},
+    es:{designEyebrow:'Diseño y responsive', worksEyebrow:'Portafolio', contactTitle:'Estamos en contacto', newTab:'(se abre en una pestaña nueva)'},
+    it:{designEyebrow:'Design e responsive', worksEyebrow:'Portfolio', contactTitle:'Siamo in contatto', newTab:'(si apre in una nuova scheda)'},
+    pl:{designEyebrow:'Design i responsywność', worksEyebrow:'Portfolio', contactTitle:'Jesteśmy w kontakcie', newTab:'(otwiera się w nowej karcie)'},
+    ro:{designEyebrow:'Design și responsive', worksEyebrow:'Portofoliu', contactTitle:'Suntem în contact', newTab:'(se deschide într-o filă nouă)'},
+    pt:{designEyebrow:'Design e responsivo', worksEyebrow:'Portfólio', contactTitle:'Estamos em contato', newTab:'(abre em uma nova aba)'}
+  };
+  /* merge EXT + STATS + MAIL + MORE into TR */
   Object.keys(EXT).forEach(function(k){ Object.assign(TR[k]||{}, EXT[k]); });
   Object.keys(STATS).forEach(function(k){ Object.assign(TR[k]||{}, STATS[k]); });
   Object.keys(MAIL).forEach(function(k){ Object.assign(TR[k]||{}, MAIL[k]); });
+  Object.keys(MORE).forEach(function(k){ Object.assign(TR[k]||{}, MORE[k]); });
+  /* compose messenger aria-labels = brand + new-tab note, per locale */
+  Object.keys(TR).forEach(function(k){
+    var nt = TR[k].newTab ? ' ' + TR[k].newTab : '';
+    TR[k].igAria = 'Instagram' + nt;
+    TR[k].tgAria = 'Telegram' + nt;
+    TR[k].waAria = 'WhatsApp' + nt;
+  });
   var LOCALES = ['ru','en','de','fr','es','it','pl','ro','pt'];
   function applyLocale(loc) {
     if (!TR[loc]) loc = 'ru';

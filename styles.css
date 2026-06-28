@@ -688,9 +688,7 @@ button { font: inherit; color: inherit; }
 /* huge mail banner at the very bottom (Lebedev-style, monochrome) */
 .mail-banner { background: #000; width: 100%; padding: clamp(64px, 12vw, 168px) 24px; text-align: center; }
 .mail-banner-eyebrow { display: block; color: rgba(255,255,255,.7); font: 600 clamp(.78rem, 1.4vw, 1rem)/1 var(--font); text-transform: uppercase; letter-spacing: .2em; margin-bottom: clamp(20px, 3.5vw, 44px); }
-.mail-banner-link { position: relative; display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(1.7rem, 8.4vw, 9.5rem); letter-spacing: -.03em; line-height: 1; text-decoration: none; padding-bottom: .14em; white-space: nowrap; }
-.mail-banner-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: clamp(3px, .5vw, 8px); background: #fff; transform-origin: center; transition: height .25s var(--ease), opacity .25s var(--ease); }
-.mail-banner-link:hover::after { height: clamp(6px, .9vw, 15px); }
+.mail-banner-link { display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(1.7rem, 8.4vw, 9.5rem); letter-spacing: -.03em; line-height: 1; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .14em; }
 .mail-banner-link:hover { opacity: .92; }
 .mail-banner-link:focus-visible { outline: 3px solid #fff; outline-offset: 12px; border-radius: 4px; }
 
@@ -698,11 +696,13 @@ button { font: inherit; color: inherit; }
 .payments { padding: clamp(26px, 5vw, 40px) 0; margin-bottom: clamp(28px, 5vw, 44px); }
 .pay-title { text-align: center; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; font-weight: 500; }
 .pay-strip { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.pay-strip { gap: 32px; }
-.pay-card { display: inline-flex; align-items: center; justify-content: center; height: 40px; min-width: 72px; padding: 0 8px; background: transparent; box-shadow: none; color: rgba(255,255,255,.8); transition: color .15s; }
-.pay-card:hover { color: #fff; }
+.pay-strip { gap: 30px; }
+.pay-card { display: inline-flex; align-items: center; justify-content: center; height: 44px; min-width: 56px; padding: 0; background: transparent; box-shadow: none; }
+.pay-card a { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-width: 24px; min-height: 24px; border-radius: 10px; color: #d8d9dd; text-decoration: none; transition: color .15s; }
+.pay-card a:hover { color: #fff; }
+.pay-card a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 10px; }
 .pay-svg { display: block; height: 26px; width: auto; }
-@media (forced-colors: active) { .pay-card { border: 1px solid CanvasText; } }
+@media (forced-colors: active) { .pay-card a:focus-visible { outline-color: Highlight; } }
 
 /* ---------- reveal on scroll (only active when JS present) ---------- */
 .js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
