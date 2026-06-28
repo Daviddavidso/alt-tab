@@ -152,8 +152,8 @@ button { font: inherit; color: inherit; }
 }
 .btn-solid { background: var(--blue-fill); color: #fff; border-color: var(--blue-fill); }
 .btn-solid:hover { transform: translateY(-2px); background: var(--blue-fill-hover); border-color: var(--blue-fill-hover); }
-.btn-ghost { background: #4a4d54; color: #fff; border-color: transparent; }
-.btn-ghost:hover { transform: translateY(-2px); background: #5a5d65; border-color: transparent; }
+.btn-ghost { background: #73767f; color: #fff; border-color: transparent; }
+.btn-ghost:hover { transform: translateY(-2px); background: #8c8f98; color: #111; border-color: transparent; }
 .btn-sm { padding: 10px 20px; font-size: .95rem; }
 .btn-lg { padding: 16px 32px; font-size: 1.05rem; }
 .btn-block { display: flex; width: 100%; }
