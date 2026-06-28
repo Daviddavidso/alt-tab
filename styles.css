@@ -836,7 +836,7 @@ body.menu-open { overflow: hidden; }
 .brand--nav .brand-word, .brand--nav .brand-star { color: #fff; }
 .brand--nav { margin-right: 8px; }
 .betting-nav .header-inner {
-  gap: 12px; align-items: center; padding: 5px 8px 5px 16px;
+  gap: 12px; align-items: center; max-width: 760px; margin-left: auto; margin-right: auto; padding: 5px 8px 5px 16px;
   background: rgba(30,33,43,.86);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   backdrop-filter: saturate(180%) blur(24px);
