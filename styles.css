@@ -733,7 +733,7 @@ body.menu-open { overflow: hidden; }
 .claim {
   margin: 30px auto 0; width: 100%; max-width: 520px;
   display: flex; align-items: center; gap: 4px;
-  background: var(--page); border: 1px solid #767680;
+  background: var(--page); border: 1px solid #6a6c75;
   border-radius: var(--r-pill); padding: 6px 6px 6px 18px;
   transition: border-color .15s, box-shadow .15s;
 }
@@ -840,10 +840,10 @@ body.menu-open { overflow: hidden; }
   background: rgba(30,33,43,.86);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   backdrop-filter: saturate(180%) blur(24px);
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 18px;
+  border-radius: 26px;
   box-shadow: 0 14px 34px -16px rgba(0,0,0,.45);
 }
+@media (forced-colors: active) { .betting-nav .header-inner { border: 1px solid CanvasText; } }
 .pill-nav ul { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
 .pill {
   display: inline-flex; align-items: center; gap: 8px;
