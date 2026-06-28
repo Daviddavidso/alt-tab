@@ -439,13 +439,13 @@ button { font: inherit; color: inherit; }
 .t-marquee:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
 .t-track { display: flex; width: max-content; padding: 4px 0; }
 .t-card { flex: 0 0 clamp(260px, 70vw, 320px); margin-right: 20px; scroll-snap-align: start;
-  background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--r-card);
+  background: var(--page); border-radius: var(--r-card);
   box-shadow: var(--shadow-2); padding: 26px 26px 22px; display: flex; flex-direction: column; }
 .t-card .t-quote { font-size: 1.05rem; line-height: 1.5; letter-spacing: -.01em; color: var(--ink); flex: 1; margin: 0; }
 .t-card .t-author { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
 
 /* ---------- clients ---------- */
-.clients { padding: clamp(40px, 5vw, 60px) 0; border-bottom: 1px solid var(--mist); }
+.clients { padding: clamp(40px, 5vw, 60px) 0; }
 .clients .section-eyebrow { justify-content: center; text-align: center; margin-bottom: 26px; }
 .logo-strip {
   list-style: none; padding: 0; margin: 0;
@@ -654,7 +654,7 @@ button { font: inherit; color: inherit; }
 .form-fineprint { margin-top: 16px; font-size: .82rem; color: var(--slate); }
 
 /* ---------- footer ---------- */
-.site-footer { background: var(--page); color: var(--charcoal); padding: clamp(56px, 7vw, 88px) 0 36px; border-top: 1px solid var(--mist); }
+.site-footer { background: var(--page); color: var(--charcoal); padding: clamp(56px, 7vw, 88px) 0 36px; }
 .footer-inner { display: grid; grid-template-columns: 1.4fr 2fr; gap: 40px; }
 @media (max-width: 760px) { .footer-inner { grid-template-columns: 1fr; gap: 36px; } }
 .footer-tagline { margin-top: 18px; color: var(--granite); max-width: 36ch; }
@@ -676,7 +676,7 @@ button { font: inherit; color: inherit; }
 .footer-egg a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 
 /* payment methods strip */
-.payments { padding: clamp(26px, 5vw, 40px) 0; border-bottom: 1px solid var(--mist); margin-bottom: clamp(28px, 5vw, 44px); }
+.payments { padding: clamp(26px, 5vw, 40px) 0; margin-bottom: clamp(28px, 5vw, 44px); }
 .pay-title { text-align: center; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; font-weight: 500; }
 .pay-strip { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .pay-card { display: inline-flex; align-items: center; justify-content: center; height: 38px; min-width: 58px; padding: 0 14px; background: #fff; border-radius: 8px; box-shadow: var(--shadow-1); }
@@ -766,8 +766,8 @@ body.menu-open { overflow: hidden; }
 .showcase { margin-top: 48px; }
 .js .showcase.is-collapsed { display: block; max-width: 420px; margin-left: auto; margin-right: auto; }
 .js .showcase.is-collapsed .sc-card:not(:first-child) { display: none; }
-.sc-card { list-style: none; background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--r-card); padding: 16px 16px 22px; text-align: left; box-shadow: var(--shadow-1); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
-.sc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); border-color: #d6d6da; }
+.sc-card { list-style: none; background: var(--page); border-radius: var(--r-card); padding: 16px 16px 22px; text-align: left; box-shadow: var(--shadow-1); transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.sc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); }
 .sc-prev { display: block; width: 100%; aspect-ratio: 4 / 3; border-radius: 14px; background: var(--surface-soft); border: 1px solid var(--mist); margin-bottom: 16px; position: relative; overflow: hidden; }
 .sc-prev::before { content: ""; position: absolute; left: 14px; right: 14px; top: 14px; height: 8px; background: var(--charcoal); border-radius: 4px; opacity: .85; }
 .sc-prev::after { content: ""; position: absolute; left: 14px; width: 55%; bottom: 16px; height: 8px; background: var(--mist); border-radius: 4px; }
@@ -796,7 +796,7 @@ body.menu-open { overflow: hidden; }
 .feat-text { margin-top: 10px; font-size: .95rem; color: var(--granite); line-height: 1.5; }
 
 /* featured on */
-.featured-on { padding: clamp(48px, 6vw, 72px) 0; border-top: 1px solid var(--mist); border-bottom: 1px solid var(--mist); }
+.featured-on { padding: clamp(48px, 6vw, 72px) 0; }
 .featured-on .section-eyebrow { margin-bottom: 26px; }
 .fo-strip { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(24px, 5vw, 56px); }
 .fo-logo { font-weight: 700; font-size: clamp(1rem, 2vw, 1.3rem); letter-spacing: -.02em; color: var(--slate); }
@@ -855,7 +855,7 @@ body.menu-open { overflow: hidden; }
 }
 .pill .pic { width: 18px; height: 18px; flex: none; }
 .pill:hover { background: rgba(255,255,255,.18); color: #fff; }
-.pill--active, .pill--active:hover { background: #2563eb; color: #fff; border-color: #93c5fd; }
+.pill--active, .pill--active:hover { background: #2563eb; color: #fff; }
 
 .btn-auth {
   display: inline-flex; align-items: center; justify-content: center;
@@ -880,7 +880,7 @@ body.menu-open { overflow: hidden; }
 
 /* example-site block + show-all */
 .example { display: flex; flex-direction: column; align-items: center; margin-top: 44px; }
-.example-card { display: block; width: 100%; max-width: 880px; margin: 0 auto; border-radius: var(--r-feature); overflow: hidden; background: var(--page); border: 1px solid var(--border-soft); box-shadow: var(--shadow-1); text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
+.example-card { display: block; width: 100%; max-width: 880px; margin: 0 auto; border-radius: var(--r-feature); overflow: hidden; background: var(--page); box-shadow: var(--shadow-1); text-decoration: none; transition: transform .25s var(--ease), box-shadow .25s var(--ease); }
 .example-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-2); }
 .example-card:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; border-radius: var(--r-feature); box-shadow: 0 0 0 6px rgba(59,130,246,.32); }
 .example-shot { display: block; width: 100%; height: auto; }
