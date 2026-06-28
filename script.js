@@ -274,9 +274,15 @@
     ro: { stat1Num:'150+', stat1Lbl:'proiecte lansate', stat1Sr:'Peste 150 de proiecte lansate', stat2Num:'2–4', stat2Lbl:'săptămâni până la lansare', stat2Sr:'Lansare în 2 până la 4 săptămâni', stat3Num:'8 ani', stat3Lbl:'în dezvoltare web', stat3Sr:'8 ani în dezvoltare web', stat4Num:'98%', stat4Lbl:'clienți ne recomandă', stat4Sr:'98 la sută din clienți ne recomandă' },
     pt: { stat1Num:'150+', stat1Lbl:'projetos lançados', stat1Sr:'Mais de 150 projetos lançados', stat2Num:'2–4', stat2Lbl:'semanas até o lançamento', stat2Sr:'Lançamento em 2 a 4 semanas', stat3Num:'8 anos', stat3Lbl:'em desenvolvimento web', stat3Sr:'8 anos em desenvolvimento web', stat4Num:'98%', stat4Lbl:'clientes nos recomendam', stat4Sr:'98 por cento dos clientes nos recomendam' }
   };
-  /* merge EXT + STATS into TR */
+  var MAIL = {
+    ru:{mailEyebrow:'Есть проект?'}, en:{mailEyebrow:'Got a project?'}, de:{mailEyebrow:'Ein Projekt?'},
+    fr:{mailEyebrow:'Un projet ?'}, es:{mailEyebrow:'¿Tienes un proyecto?'}, it:{mailEyebrow:'Hai un progetto?'},
+    pl:{mailEyebrow:'Masz projekt?'}, ro:{mailEyebrow:'Ai un proiect?'}, pt:{mailEyebrow:'Tem um projeto?'}
+  };
+  /* merge EXT + STATS + MAIL into TR */
   Object.keys(EXT).forEach(function(k){ Object.assign(TR[k]||{}, EXT[k]); });
   Object.keys(STATS).forEach(function(k){ Object.assign(TR[k]||{}, STATS[k]); });
+  Object.keys(MAIL).forEach(function(k){ Object.assign(TR[k]||{}, MAIL[k]); });
   var LOCALES = ['ru','en','de','fr','es','it','pl','ro','pt'];
   function applyLocale(loc) {
     if (!TR[loc]) loc = 'ru';
