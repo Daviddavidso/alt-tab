@@ -432,13 +432,15 @@ button { font: inherit; color: inherit; }
 .tablet img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; border-radius: 12px; }
 
 /* testimonials marquee (лента) */
-.t-marquee { position: relative; margin-top: clamp(36px, 5vw, 52px); overflow-x: auto; -webkit-overflow-scrolling: touch; scroll-snap-type: x proximity; scrollbar-width: none;
+.t-marquee { position: relative; margin-top: clamp(36px, 5vw, 52px); overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.t-marquee::-webkit-scrollbar { display: none; }
 .t-marquee:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 4px; }
-.t-track { display: flex; width: max-content; padding: 4px 0; }
-.t-card { flex: 0 0 clamp(260px, 70vw, 320px); margin-right: 20px; scroll-snap-align: start;
+.t-track { display: flex; width: max-content; padding: 4px 0; animation: t-scroll 60s linear infinite; }
+.t-marquee:hover .t-track, .t-marquee:focus-within .t-track { animation-play-state: paused; }
+@keyframes t-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .t-track { animation: none; } .t-marquee { overflow-x: auto; } }
+.t-card { flex: 0 0 clamp(260px, 70vw, 320px); margin-right: 20px;
   background: var(--page); border-radius: var(--r-card);
   box-shadow: var(--shadow-2); padding: 26px 26px 22px; display: flex; flex-direction: column; }
 .t-card .t-quote { font-size: 1.05rem; line-height: 1.5; letter-spacing: -.01em; color: var(--ink); flex: 1; margin: 0; }
@@ -679,11 +681,8 @@ button { font: inherit; color: inherit; }
 .payments { padding: clamp(26px, 5vw, 40px) 0; margin-bottom: clamp(28px, 5vw, 44px); }
 .pay-title { text-align: center; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; font-weight: 500; }
 .pay-strip { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.pay-card { display: inline-flex; align-items: center; justify-content: center; height: 38px; min-width: 58px; padding: 0 14px; background: #fff; border-radius: 8px; box-shadow: var(--shadow-1); }
-.pay-visa { color: #1a1f71; font-weight: 800; font-style: italic; font-size: 1.05rem; letter-spacing: .02em; }
-.pay-mir { color: #0a9d4a; font-weight: 800; font-size: 1.05rem; }
-.pay-sbp { color: #159b8f; font-weight: 800; font-size: 1rem; }
-.pay-mc { width: 38px; height: 24px; display: block; }
+.pay-card { display: inline-flex; align-items: center; justify-content: center; height: 44px; min-width: 64px; padding: 0 14px; background: #fff; border-radius: 8px; box-shadow: var(--shadow-1); }
+.pay-svg { display: block; height: 22px; width: auto; }
 @media (forced-colors: active) { .pay-card { border: 1px solid CanvasText; } }
 
 /* ---------- reveal on scroll (only active when JS present) ---------- */
@@ -733,11 +732,12 @@ body.menu-open { overflow: hidden; }
 .claim {
   margin: 30px auto 0; width: 100%; max-width: 520px;
   display: flex; align-items: center; gap: 4px;
-  background: var(--page); border: 1px solid #6a6c75;
+  background: #606060; border: 0;
   border-radius: var(--r-pill); padding: 6px 6px 6px 18px;
-  transition: border-color .15s, box-shadow .15s;
+  transition: box-shadow .15s;
 }
-.claim:focus-within { border-color: var(--blue-fill); box-shadow: 0 0 0 3px rgba(59,130,246,.28); }
+.claim:focus-within { outline: 2px solid #000; outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
+.claim input::placeholder { color: #c8cad0; opacity: 1; }
 .claim input {
   flex: 1; min-width: 0; border: 0; background: transparent; outline: none;
   font-family: var(--font-input); font-size: 1rem; color: var(--charcoal); padding: 11px 2px;
@@ -826,7 +826,7 @@ body.menu-open { overflow: hidden; }
 .chat-fab:focus-visible { outline: 2px solid #fff; outline-offset: -4px; box-shadow: 0 0 0 2px #171717, 0 0 0 4px #fff; }
 
 /* claim form: real focus ring on the input + invalid state */
-.claim input:focus-visible { outline: 2px solid var(--charcoal); outline-offset: 2px; border-radius: 4px; }
+.claim input:focus-visible { outline: none; }
 .claim:has(input[aria-invalid="true"]) { border-color: var(--err); box-shadow: 0 0 0 3px rgba(180,35,24,.16); }
 
 /* ============================================================
