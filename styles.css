@@ -858,10 +858,12 @@ body.menu-open { overflow: hidden; }
 .pill:hover { background: rgba(255,255,255,.18); color: #fff; }
 .pill--active, .pill--active:hover { background: #2563eb; color: #fff; }
 
-.lang-select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background: transparent; color: #fff; border: 0 !important; outline: none; box-shadow: none; border-radius: 9999px; padding: 8px 10px; font: 600 .85rem/1 var(--font); cursor: pointer; min-width: 44px; text-align: center; }
+.lang-select { appearance: none; -webkit-appearance: none; -moz-appearance: none; background: transparent; color: #fff; border: 0; outline: none; box-shadow: none; border-radius: 9999px; padding: 8px 10px; font: 600 .85rem/1 var(--font); cursor: pointer; min-width: 44px; text-align: center; }
 .lang-select option { background: #1f222b; color: #fff; }
-.lang-select:hover, .lang-select:focus, .lang-select:active { outline: none !important; box-shadow: none !important; border: 0 !important; }
-.betting-nav .lang-select:focus-visible { outline: 2px solid #fff !important; outline-offset: -2px; box-shadow: none !important; }
+.lang-select:hover, .lang-select:active { outline: none; box-shadow: none; background: transparent; }
+.lang-select:focus { outline: none; box-shadow: none; }
+.lang-select:focus:not(:focus-visible) { outline: none; box-shadow: none; }
+.betting-nav .lang-select:focus-visible { outline: 2px solid #fff; outline-offset: 2px; box-shadow: none; }
 
 .btn-auth {
   display: inline-flex; align-items: center; justify-content: center;
