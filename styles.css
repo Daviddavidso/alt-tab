@@ -756,24 +756,21 @@ body.menu-open { overflow: hidden; }
 
 /* inline claim form */
 .claim {
-  margin: 30px auto 0; width: 100%; max-width: 520px;
-  display: flex; align-items: center; gap: 4px;
-  background: #606060; border: 0;
-  border-radius: var(--r-pill); padding: 6px 6px 6px 18px;
-  transition: box-shadow .15s;
+  margin: 30px auto 0; width: 100%; max-width: 540px;
+  display: flex; align-items: stretch; gap: 10px;
+  background: transparent; border: 0; padding: 0;
 }
-.claim:focus-within { outline: 2px solid #000; outline-offset: 2px; box-shadow: 0 0 0 4px #fff; }
-.claim input::placeholder { color: #c8cad0; opacity: 1; }
 .claim input {
-  flex: 1; min-width: 0; border: 0; background: transparent; outline: none;
-  font-family: var(--font-input); font-size: 1rem; color: var(--charcoal); padding: 11px 2px;
+  flex: 1; min-width: 0; border: 0; border-bottom: 2px solid #3b82f6; outline: none;
+  background: var(--surface-soft); border-radius: 10px 10px 0 0;
+  font-family: var(--font-input); font-size: 1rem; color: var(--charcoal); padding: 13px 14px;
 }
-.claim input::placeholder { color: var(--slate); }
+.claim input::placeholder { color: var(--slate); opacity: 1; }
 .claim-suffix { color: var(--slate); font-size: .98rem; white-space: nowrap; padding-right: 6px; }
 .claim .btn { flex: 0 0 auto; padding: 12px 20px; }
 @media (max-width: 520px) {
-  .claim { flex-wrap: wrap; border-radius: 20px; padding: 10px; gap: 8px; }
-  .claim input { flex: 1 1 55%; padding-left: 8px; }
+  .claim { flex-wrap: wrap; gap: 10px; }
+  .claim input { flex: 1 1 100%; }
   .claim .btn { flex: 1 1 100%; }
 }
 
@@ -852,8 +849,8 @@ body.menu-open { overflow: hidden; }
 .chat-fab:focus-visible { outline: 2px solid #fff; outline-offset: -4px; box-shadow: 0 0 0 2px #171717, 0 0 0 4px #fff; }
 
 /* claim form: real focus ring on the input + invalid state */
-.claim input:focus-visible { outline: none; }
-.claim:has(input[aria-invalid="true"]) { border-color: var(--err); box-shadow: 0 0 0 3px rgba(180,35,24,.16); }
+.claim input:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-bottom-color: #fff; }
+.claim input[aria-invalid="true"] { border-bottom-color: var(--err); }
 
 /* ============================================================
    1win-style dark pill navigation
