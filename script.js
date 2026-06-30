@@ -295,6 +295,19 @@
   Object.keys(STATS).forEach(function(k){ Object.assign(TR[k]||{}, STATS[k]); });
   Object.keys(MAIL).forEach(function(k){ Object.assign(TR[k]||{}, MAIL[k]); });
   Object.keys(MORE).forEach(function(k){ Object.assign(TR[k]||{}, MORE[k]); });
+  /* overrides: shorter design title/lead + footer social-row label */
+  var DZ = {
+    ru:{designTitle:'Дизайн, а не шаблон', designLead:'Индивидуальный интерфейс под вашу задачу, выверенный на телефоне, планшете и десктопе.', socialsAria:'Соцсети и мессенджеры'},
+    en:{designTitle:'Design, not a template', designLead:'A custom interface built around your goal, flawless on phone, tablet and desktop.', socialsAria:'Social and messaging links'},
+    de:{designTitle:'Design statt Vorlage', designLead:'Ein individuelles Interface für Ihr Ziel, einwandfrei auf Handy, Tablet und Desktop.', socialsAria:'Soziale Netzwerke und Messenger'},
+    fr:{designTitle:'Du design, pas un template', designLead:'Une interface sur mesure pour votre objectif, impeccable sur mobile, tablette et desktop.', socialsAria:'Réseaux sociaux et messageries'},
+    es:{designTitle:'Diseño, no una plantilla', designLead:'Una interfaz a medida de tu objetivo, impecable en móvil, tablet y escritorio.', socialsAria:'Redes sociales y mensajería'},
+    it:{designTitle:'Design, non un template', designLead:'Un’interfaccia su misura per il tuo obiettivo, impeccabile su mobile, tablet e desktop.', socialsAria:'Social e messaggistica'},
+    pl:{designTitle:'Design, nie szablon', designLead:'Interfejs skrojony pod twój cel, bez zarzutu na telefonie, tablecie i desktopie.', socialsAria:'Media społecznościowe i komunikatory'},
+    ro:{designTitle:'Design, nu un șablon', designLead:'O interfață croită pe obiectivul tău, impecabilă pe mobil, tabletă și desktop.', socialsAria:'Rețele sociale și mesagerie'},
+    pt:{designTitle:'Design, não um template', designLead:'Uma interface sob medida para seu objetivo, impecável no celular, tablet e desktop.', socialsAria:'Redes sociais e mensageiros'}
+  };
+  Object.keys(DZ).forEach(function(k){ Object.assign(TR[k]||{}, DZ[k]); });
   /* compose messenger aria-labels = brand + new-tab note, per locale */
   Object.keys(TR).forEach(function(k){
     var nt = TR[k].newTab ? ' ' + TR[k].newTab : '';

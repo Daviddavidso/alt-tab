@@ -37,7 +37,7 @@
   --ok: #4ade80;
   --ok-bg: #122017;
 
-  --maxw: 1200px;
+  --maxw: 960px;
   --maxw-narrow: 760px;
   --header-h: 68px;
   --r-card: 16px;
@@ -297,8 +297,8 @@ button { font: inherit; color: inherit; }
   white-space: nowrap;
 }
 .hero-sub {
-  margin-top: 24px; font-size: clamp(1.15rem, 1.9vw, 1.4rem);
-  color: #c7c9d1; max-width: 56ch;
+  margin-top: 20px; font-size: clamp(1rem, 1.3vw, 1.12rem);
+  color: var(--slate); max-width: 52ch;
 }
 @media (max-width: 560px) {
   .hero { padding-top: 18px; }
@@ -553,7 +553,14 @@ button { font: inherit; color: inherit; }
   width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center;
   font-size: .72rem; font-weight: 700; color: #fff; background: var(--blue-fill); border-radius: 50%;
 }
-.pricing-note { margin-top: 32px; text-align: center; color: var(--granite); }
+.pricing-note { margin-top: 32px; text-align: center; color: var(--slate); font-size: .95rem; }
+.section-lead.center { color: var(--slate); font-size: 1rem; }
+.footer-socials { list-style: none; padding: 0; margin: 20px 0 0; display: flex; gap: 16px; }
+.footer-socials a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; color: #d8d9dd; transition: color .15s; }
+.footer-socials a:hover { color: #fff; }
+.footer-socials a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 12px; }
+.footer-socials .pay-svg { height: 26px; width: auto; display: block; }
+@media (forced-colors: active) { .footer-socials a:focus-visible { outline-color: Highlight; } }
 .pricing-note a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 620px) { .plan--featured { margin-top: 18px; } }
 
@@ -855,7 +862,7 @@ body.menu-open { overflow: hidden; }
 .brand--nav .brand-word, .brand--nav .brand-star { color: #fff; }
 .brand--nav { margin-right: 8px; }
 .betting-nav .header-inner {
-  gap: 12px; align-items: center; max-width: 920px; margin-left: auto; margin-right: auto; padding: 5px 8px 5px 16px;
+  gap: 12px; align-items: center; max-width: var(--maxw); margin-left: auto; margin-right: auto; padding: 5px 8px 5px 16px;
   background: rgba(30,33,43,.86);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   backdrop-filter: saturate(180%) blur(24px);
