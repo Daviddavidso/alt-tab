@@ -693,9 +693,9 @@ button { font: inherit; color: inherit; }
 .footer-egg a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 
 /* footer contact CTA (big email, sits on the footer surface) */
-.footer-cta { text-align: center; padding-bottom: clamp(48px, 6vw, 80px); margin-bottom: clamp(48px, 6vw, 76px); }
-.footer-cta-eyebrow { display: block; color: var(--slate); font: 600 clamp(.8rem, 1.3vw, .95rem)/1 var(--font); text-transform: uppercase; letter-spacing: .22em; margin-bottom: clamp(18px, 2.5vw, 30px); }
-.footer-cta-mail { display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(2rem, 7.5vw, 5.5rem); letter-spacing: -.02em; line-height: 1; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
+.footer-cta { width: 100%; text-align: center; padding: 0 clamp(10px, 2.5vw, 36px) clamp(48px, 6vw, 80px); margin-bottom: clamp(48px, 6vw, 76px); }
+.footer-cta-eyebrow { display: block; color: var(--slate); font: 600 clamp(.8rem, 1.3vw, .95rem)/1 var(--font); text-transform: uppercase; letter-spacing: .22em; margin-bottom: clamp(18px, 2.5vw, 34px); }
+.footer-cta-mail { display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(2.1rem, 11vw, 20rem); letter-spacing: -.025em; line-height: 1; white-space: nowrap; text-decoration: underline; text-decoration-thickness: clamp(2px, .35vw, 7px); text-underline-offset: .1em; }
 .footer-cta-mail:hover { opacity: .9; }
 .footer-cta-mail:focus-visible { outline: 3px solid #fff; outline-offset: 8px; border-radius: 4px; }
 
