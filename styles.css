@@ -671,20 +671,20 @@ button { font: inherit; color: inherit; }
 .form-fineprint { margin-top: 16px; font-size: .82rem; color: var(--slate); }
 
 /* ---------- footer ---------- */
-.site-footer { background: var(--page); color: var(--charcoal); padding: clamp(56px, 7vw, 88px) 0 36px; }
+.site-footer { background: var(--page); color: var(--charcoal); padding: clamp(72px, 9vw, 128px) 0 40px; }
 .footer-inner { display: grid; grid-template-columns: 1.4fr 2fr; gap: 40px; }
 @media (max-width: 760px) { .footer-inner { grid-template-columns: 1fr; gap: 36px; } }
-.footer-tagline { margin-top: 18px; color: var(--granite); max-width: 36ch; }
+.footer-tagline { margin-top: 16px; color: var(--granite); max-width: 34ch; font-size: 1.05rem; line-height: 1.55; }
 .footer-nav { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 @media (max-width: 460px) { .footer-nav { grid-template-columns: repeat(2, 1fr); } }
-.footer-col-title { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 16px; font-weight: 500; }
-.footer-col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.footer-col a { color: var(--charcoal); text-decoration: none; font-size: .98rem; }
+.footer-col-title { font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; color: var(--slate); margin-bottom: 18px; font-weight: 600; }
+.footer-col ul { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.footer-col a { color: var(--charcoal); text-decoration: none; font-size: 1.08rem; }
 .footer-col a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .footer-bottom {
   margin-top: clamp(40px, 5vw, 64px); padding-top: 8px;
   display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap;
-  color: var(--slate); font-size: .9rem;
+  color: var(--slate); font-size: .95rem;
 }
 .socials { list-style: none; padding: 0; display: flex; gap: 20px; }
 .socials a { color: var(--charcoal); text-decoration: none; }
@@ -692,12 +692,12 @@ button { font: inherit; color: inherit; }
 .footer-egg { text-align: center; color: var(--slate); font-size: .9rem; max-width: var(--maxw); margin: 12px auto 0; padding: 0 24px; }
 .footer-egg a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 
-/* huge mail banner at the very bottom (Lebedev-style, monochrome) */
-.mail-banner { background: var(--bg); width: 100%; padding: clamp(64px, 12vw, 168px) 24px; text-align: center; }
-.mail-banner-eyebrow { display: block; color: rgba(255,255,255,.7); font: 600 clamp(.78rem, 1.4vw, 1rem)/1 var(--font); text-transform: uppercase; letter-spacing: .2em; margin-bottom: clamp(20px, 3.5vw, 44px); }
-.mail-banner-link { display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(1.7rem, 8.4vw, 9.5rem); letter-spacing: -.03em; line-height: 1; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .14em; }
-.mail-banner-link:hover { opacity: .92; }
-.mail-banner-link:focus-visible { outline: 3px solid #fff; outline-offset: 12px; border-radius: 4px; }
+/* footer contact CTA (big email, sits on the footer surface) */
+.footer-cta { text-align: center; padding-bottom: clamp(48px, 6vw, 80px); margin-bottom: clamp(48px, 6vw, 76px); }
+.footer-cta-eyebrow { display: block; color: var(--slate); font: 600 clamp(.8rem, 1.3vw, .95rem)/1 var(--font); text-transform: uppercase; letter-spacing: .22em; margin-bottom: clamp(18px, 2.5vw, 30px); }
+.footer-cta-mail { display: inline-block; max-width: 100%; color: #fff; font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(2rem, 7.5vw, 5.5rem); letter-spacing: -.02em; line-height: 1; white-space: nowrap; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .12em; }
+.footer-cta-mail:hover { opacity: .9; }
+.footer-cta-mail:focus-visible { outline: 3px solid #fff; outline-offset: 8px; border-radius: 4px; }
 
 /* payment methods strip */
 .payments { padding: clamp(26px, 5vw, 40px) 0; margin-bottom: clamp(28px, 5vw, 44px); }
