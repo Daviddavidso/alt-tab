@@ -570,7 +570,7 @@ button { font: inherit; color: inherit; }
   font-size: .72rem; font-weight: 700; color: #fff; background: var(--blue-fill); border-radius: 50%;
 }
 .pricing-note { margin-top: 32px; text-align: center; color: var(--slate); font-size: .95rem; }
-.section-lead.center { color: var(--slate); font-size: 1rem; }
+.section-lead.center { margin-top: 16px; }
 .footer-socials { list-style: none; padding: 0; margin: 20px 0 0; display: flex; gap: 16px; }
 .footer-socials a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 12px; color: #d8d9dd; transition: color .15s; }
 .footer-socials a:hover { color: #fff; }
