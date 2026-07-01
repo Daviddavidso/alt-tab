@@ -855,11 +855,11 @@ body.menu-open { overflow: hidden; }
 /* ============================================================
    1win-style dark pill navigation
    ============================================================ */
-.betting-nav { position: sticky; top: 0; z-index: 100; background: transparent; border-bottom: 0; height: auto; padding: 6px 0; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.betting-nav { position: sticky; top: 0; z-index: 100; background: transparent; border-bottom: 0; height: auto; padding: 6px 24px; backdrop-filter: none; -webkit-backdrop-filter: none; }
 .brand--nav .brand-word, .brand--nav .brand-star { color: #fff; }
 .brand--nav { margin-right: 8px; }
 .betting-nav .header-inner {
-  gap: 12px; align-items: center; max-width: var(--maxw); margin-left: auto; margin-right: auto; padding: 5px 24px;
+  gap: 12px; align-items: center; max-width: calc(var(--maxw) - 48px); margin-left: auto; margin-right: auto; padding: 10px 13px;
   background: rgba(30,33,43,.86);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   backdrop-filter: saturate(180%) blur(24px);
