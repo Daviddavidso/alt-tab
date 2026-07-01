@@ -873,7 +873,7 @@ body.menu-open { overflow: hidden; }
   background: rgba(30,33,43,.86);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   backdrop-filter: saturate(180%) blur(24px);
-  border-radius: 26px;
+  border-radius: var(--r-pill);
   box-shadow: 0 14px 34px -16px rgba(0,0,0,.45);
 }
 @media (forced-colors: active) { .betting-nav .header-inner { border: 1px solid CanvasText; } }
