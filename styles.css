@@ -936,14 +936,15 @@ img.avatar { object-fit: cover; }
 .section-stats .hero-stats { margin: 0; }
 
 /* value: text left + tablet right */
-.value-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
-.value-text .eyebrow { margin-bottom: 14px; }
+.value-grid { display: flex; flex-direction: column; align-items: center; text-align: center; gap: clamp(30px, 4vw, 52px); }
+.value-text { max-width: 62ch; }
+.value-text .eyebrow { margin-bottom: 14px; justify-content: center; }
 .value-text .section-title { margin: 0; }
-.value-text .section-lead { max-width: 48ch; margin-top: 18px; }
-.value-grid .tablet { margin: 0; width: 100%; max-width: 520px; justify-self: center; }
+.value-text .section-lead { max-width: 54ch; margin: 16px auto 0; }
+.value-grid .tablet { margin: 0 auto; width: 100%; max-width: 780px; }
 @media (max-width: 860px) {
-  .value-grid { grid-template-columns: 1fr; gap: 30px; }
-  .value-grid .tablet { margin: 4px auto 0; }
+  .value-grid { gap: 28px; }
+  .value-grid .tablet { margin: 0 auto; max-width: 100%; }
 }
 
 /* works: 2-up gallery of real example screenshots */
