@@ -768,7 +768,7 @@ body.menu-open { overflow: hidden; }
 .center-head .btn { margin-top: 28px; }
 .reassure-line { margin-top: 14px; font-size: .9rem; color: var(--granite); }
 .center-cta { text-align: center; margin-top: 40px; }
-.section-soft { background: #16181e; }
+.section-soft { background: #16181e; padding: clamp(30px, 4vw, 50px) 0; }
 
 /* inline claim form */
 .claim {
