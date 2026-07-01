@@ -308,6 +308,12 @@
     pt:{designTitle:'Design, não um template', designLead:'Uma interface sob medida para seu objetivo, impecável no celular, tablet e desktop.', socialsAria:'Redes sociais e mensageiros'}
   };
   Object.keys(DZ).forEach(function(k){ Object.assign(TR[k]||{}, DZ[k]); });
+  var WB = {
+    ru:{worksCta:'Все проекты'}, en:{worksCta:'See projects'}, de:{worksCta:'Alle Projekte'},
+    fr:{worksCta:'Tous les projets'}, es:{worksCta:'Ver proyectos'}, it:{worksCta:'Tutti i progetti'},
+    pl:{worksCta:'Wszystkie projekty'}, ro:{worksCta:'Toate proiectele'}, pt:{worksCta:'Ver projetos'}
+  };
+  Object.keys(WB).forEach(function(k){ Object.assign(TR[k]||{}, WB[k]); });
   /* compose messenger aria-labels = brand + new-tab note, per locale */
   Object.keys(TR).forEach(function(k){
     var nt = TR[k].newTab ? ' ' + TR[k].newTab : '';

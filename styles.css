@@ -155,6 +155,16 @@ button { font: inherit; color: inherit; }
 .btn-ghost { background: #73767f; color: #fff; border-color: transparent; }
 .btn-ghost:hover { transform: translateY(-2px); background: #8c8f98; color: #111; border-color: transparent; }
 .btn-sm { padding: 10px 20px; font-size: .95rem; }
+
+/* glowing "all projects" CTA */
+.works-cta { text-align: center; margin-top: clamp(32px, 5vw, 56px); }
+.btn-glow { animation: btn-glow-pulse 2.6s ease-in-out infinite; }
+@keyframes btn-glow-pulse {
+  0%, 100% { box-shadow: 0 0 16px 1px rgba(37,99,235,.35); }
+  50%      { box-shadow: 0 0 30px 6px rgba(37,99,235,.65); }
+}
+.btn-glow:focus-visible { animation: none; }
+@media (prefers-reduced-motion: reduce) { .btn-glow { animation: none; box-shadow: 0 0 18px 2px rgba(37,99,235,.4); } }
 .btn-lg { padding: 16px 32px; font-size: 1.05rem; }
 .btn-block { display: flex; width: 100%; }
 .btn:active { transform: translateY(0); }
