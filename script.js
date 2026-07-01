@@ -320,6 +320,17 @@
     pt:{worksCta:'Ver projetos', worksLead:'Projetos reais, não imagens. Abra e explore agora mesmo.'}
   };
   Object.keys(WB).forEach(function(k){ Object.assign(TR[k]||{}, WB[k]); });
+  /* testimonial names/monograms: Russian for ru, Western for every other locale */
+  var REVN = {
+    rev1Name:['Анна Гаврилова','Emma Carter'], rev1Mono:['АГ','EC'],
+    rev2Name:['Дмитрий Климов','Daniel Weber'], rev2Mono:['ДК','DW'],
+    rev3Name:['Игорь Соколов','James Fletcher'], rev3Mono:['ИС','JF'],
+    rev4Name:['Мария Зайцева','Sophie Lindqvist'], rev4Mono:['МЗ','SL'],
+    rev5Name:['Павел Орлов','Lucas Meyer'], rev5Mono:['ПО','LM']
+  };
+  Object.keys(TR).forEach(function(k){
+    Object.keys(REVN).forEach(function(key){ TR[k][key] = (k === 'ru' ? REVN[key][0] : REVN[key][1]); });
+  });
   /* compose messenger aria-labels = brand + new-tab note, per locale */
   Object.keys(TR).forEach(function(k){
     var nt = TR[k].newTab ? ' ' + TR[k].newTab : '';
