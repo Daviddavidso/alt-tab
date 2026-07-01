@@ -309,9 +309,15 @@
   };
   Object.keys(DZ).forEach(function(k){ Object.assign(TR[k]||{}, DZ[k]); });
   var WB = {
-    ru:{worksCta:'Все проекты'}, en:{worksCta:'See projects'}, de:{worksCta:'Alle Projekte'},
-    fr:{worksCta:'Tous les projets'}, es:{worksCta:'Ver proyectos'}, it:{worksCta:'Tutti i progetti'},
-    pl:{worksCta:'Wszystkie projekty'}, ro:{worksCta:'Toate proiectele'}, pt:{worksCta:'Ver projetos'}
+    ru:{worksCta:'Все проекты', worksLead:'Живые проекты, а не картинки. Открывайте и кликайте прямо сейчас.'},
+    en:{worksCta:'See projects', worksLead:'Live projects, not mockups. Open and click through right now.'},
+    de:{worksCta:'Alle Projekte', worksLead:'Echte Projekte, keine Bilder. Öffnen und direkt durchklicken.'},
+    fr:{worksCta:'Tous les projets', worksLead:'Des projets en ligne, pas des images. À ouvrir et explorer tout de suite.'},
+    es:{worksCta:'Ver proyectos', worksLead:'Proyectos reales, no maquetas. Ábrelos y explóralos ahora mismo.'},
+    it:{worksCta:'Tutti i progetti', worksLead:'Progetti veri, non immagini. Aprili ed esplorali subito.'},
+    pl:{worksCta:'Wszystkie projekty', worksLead:'Prawdziwe projekty, nie obrazki. Otwórz i klikaj od razu.'},
+    ro:{worksCta:'Toate proiectele', worksLead:'Proiecte reale, nu poze. Deschide-le și explorează-le acum.'},
+    pt:{worksCta:'Ver projetos', worksLead:'Projetos reais, não imagens. Abra e explore agora mesmo.'}
   };
   Object.keys(WB).forEach(function(k){ Object.assign(TR[k]||{}, WB[k]); });
   /* compose messenger aria-labels = brand + new-tab note, per locale */

@@ -766,21 +766,26 @@ body.menu-open { overflow: hidden; }
 
 /* inline claim form */
 .claim {
-  margin: 30px auto 0; width: 100%; max-width: 540px;
-  display: flex; align-items: stretch; gap: 10px;
+  margin: 30px auto 0; width: 100%; max-width: 560px;
+  display: flex; align-items: center; gap: 14px;
   background: transparent; border: 0; padding: 0;
 }
+.claim-field {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  border-bottom: 2px solid #3b82f6; padding: 10px 4px; transition: border-color .15s;
+}
+.claim-field:focus-within { border-bottom-color: #fff; }
+.claim-icon { width: 20px; height: 20px; color: var(--slate); flex: 0 0 auto; }
 .claim input {
-  flex: 1; min-width: 0; border: 0; border-bottom: 2px solid #3b82f6; outline: none;
-  background: var(--surface-soft); border-radius: 10px 10px 0 0;
-  font-family: var(--font-input); font-size: 1rem; color: var(--charcoal); padding: 13px 14px;
+  flex: 1; min-width: 0; border: 0; outline: none; background: transparent;
+  font-family: var(--font-input); font-size: 1.05rem; color: var(--charcoal); padding: 4px 0;
 }
 .claim input::placeholder { color: var(--slate); opacity: 1; }
 .claim-suffix { color: var(--slate); font-size: .98rem; white-space: nowrap; padding-right: 6px; }
 .claim .btn { flex: 0 0 auto; padding: 12px 20px; }
 @media (max-width: 520px) {
-  .claim { flex-wrap: wrap; gap: 10px; }
-  .claim input { flex: 1 1 100%; }
+  .claim { flex-wrap: wrap; gap: 12px; }
+  .claim-field { flex: 1 1 100%; }
   .claim .btn { flex: 1 1 100%; }
 }
 
@@ -859,8 +864,8 @@ body.menu-open { overflow: hidden; }
 .chat-fab:focus-visible { outline: 2px solid #fff; outline-offset: -4px; box-shadow: 0 0 0 2px #171717, 0 0 0 4px #fff; }
 
 /* claim form: real focus ring on the input + invalid state */
-.claim input:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-bottom-color: #fff; }
-.claim input[aria-invalid="true"] { border-bottom-color: var(--err); }
+.claim input:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 4px; }
+.claim-field:has(input[aria-invalid="true"]) { border-bottom-color: var(--err); }
 
 /* ============================================================
    1win-style dark pill navigation

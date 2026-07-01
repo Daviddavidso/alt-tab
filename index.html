@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/satoshi-700.woff2" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500&display=swap">
-  <link rel="stylesheet" href="styles.css?v=98">
+  <link rel="stylesheet" href="styles.css?v=99">
   <script>try{var l=localStorage.getItem('locale');if(l&&/^(ru|en|de|fr|es|it|pl|ro|pt)$/.test(l))document.documentElement.lang=l;}catch(e){}</script>
 </head>
 <body>
@@ -120,6 +120,7 @@
       <div class="container">
         <div class="center-head reveal">
           <h2 id="works-heading" class="section-title" data-i18n="worksTitle">Примеры наших работ</h2>
+          <p class="section-lead center" data-i18n="worksLead">Живые проекты, а не картинки. Открывайте и кликайте прямо сейчас.</p>
         </div>
 
         <ul role="list" class="work-gallery reveal">
@@ -240,7 +241,10 @@
 
         <form class="claim" id="lead-2" novalidate aria-label="Заявка на обсуждение проекта">
           <label for="lead-contact-2" class="sr-only" data-i18n="formLabel">Ваш email или телефон</label>
-          <input type="text" id="lead-contact-2" name="contact" placeholder="ваш email или телефон" autocomplete="off" data-i18n-attr='{"placeholder":"formPlaceholder"}'>
+          <span class="claim-field">
+            <svg class="claim-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            <input type="text" id="lead-contact-2" name="contact" placeholder="ваш email или телефон" data-i18n-attr='{"placeholder":"formPlaceholder"}'>
+          </span>
           <button type="submit" class="btn btn-solid claim-btn" data-i18n="formSubmit">Обсудить проект</button>
         </form>
       </div>
@@ -292,6 +296,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=97"></script>
+  <script src="script.js?v=99"></script>
 </body>
 </html>
