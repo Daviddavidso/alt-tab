@@ -503,69 +503,69 @@ button { font: inherit; color: inherit; }
 /* ---------- formerly-dark sections now light ---------- */
 .section-dark { background: var(--page); }
 
-/* ---------- works / benchmarks ---------- */
-.works-grid { margin-top: 10px; }
-/* no overflow/clip on .work or figure: it would eat the focus ring */
+/* ---------- works: галерея без «коробок», картинка + текст на фоне секции ---------- */
+.works-grid { margin-top: 18px; gap: clamp(28px, 3.4vw, 44px); }
+/* никакого overflow/clip на .work и figure: съест фокус-кольцо */
 .work { list-style: none; scroll-margin-top: calc(var(--header-h) + 16px); }
 .work figure {
   position: relative; height: 100%; display: flex; flex-direction: column;
-  background: var(--page); border-radius: var(--r-card);
-  box-shadow: var(--shadow-2);
-  transition: transform .2s var(--ease), background .2s;
 }
 .work-thumb {
-  display: block; width: 100%; aspect-ratio: 16 / 10;
-  border-radius: var(--r-card) var(--r-card) 0 0;
-  background: var(--surface-soft);
-  overflow: hidden; /* only the image wrapper clips */
+  position: relative; display: block; width: 100%; aspect-ratio: 16 / 10;
+  border-radius: 14px; background: var(--surface-soft);
+  /* тонкий внутренний кант: почти чёрные превью не выглядят пустой дырой */
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.09);
+  overflow: hidden; /* клипует только обёртку картинки */
 }
 .work-thumb img {
   display: block; width: 100%; height: 100%; object-fit: cover;
-  transition: transform .35s var(--ease);
+  transition: transform .5s var(--ease);
 }
-.work figcaption { padding: 22px 24px 26px; }
-.work-title { font-size: 1.25rem; font-weight: 500; letter-spacing: -.02em; color: var(--ink); }
-.work-title a { color: inherit; text-decoration: none; display: inline; }
-/* stretched hit area, the description below stays selectable */
-.work-title a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: var(--r-card); }
-.work-kind { color: var(--granite); font-weight: 400; }
-/* corner chip instead of a trailing glyph: the arrow never gets orphaned onto its own line */
+.work figcaption { padding: 18px 2px 0; }
+.work-kind {
+  font-size: .72rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--slate);
+}
+.work-title { margin-top: 9px; font-size: clamp(1.35rem, 1.9vw, 1.6rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; color: var(--ink); }
+.work-title a { color: inherit; text-decoration: none; }
+/* растянутая зона клика, описание ниже остаётся выделяемым */
+.work-title a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: 14px; }
+.work-desc { position: relative; z-index: 2; margin-top: 12px; max-width: 46ch; color: var(--granite); font-size: .97rem; line-height: 1.6; }
+
 .work-arrow {
   position: absolute; top: 14px; right: 14px; z-index: 2;
-  width: 32px; height: 32px; padding: 8px; border-radius: 50%;
-  color: #fff; background: rgba(14,16,20,.72); backdrop-filter: blur(6px);
-  transition: background .2s var(--ease);
+  width: 34px; height: 34px; padding: 9px; border-radius: 50%;
+  color: #fff; background: rgba(14,16,20,.66); backdrop-filter: blur(6px);
+  transition: background .2s var(--ease), transform .2s var(--ease);
 }
-.work figure:hover .work-arrow,
-.work figure:has(:focus-visible) .work-arrow { background: var(--blue-fill); }
-.work-desc { position: relative; z-index: 2; margin-top: 10px; color: var(--granite); font-size: .98rem; }
-.works-note { margin-top: 28px; text-align: center; color: var(--slate); font-size: .95rem; }
-.works-note a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
 
-/* hover and keyboard focus get the same treatment */
-.work figure:hover,
-.work figure:has(:focus-visible) { transform: translateY(-3px); background: var(--surface-soft); }
-.work figure:hover .work-thumb img { transform: scale(1.03); }
-.work figure:hover .work-title a,
-.work figure:has(:focus-visible) .work-title a { text-decoration: underline; text-underline-offset: 4px; }
-/* the ring must never sit on a screenshot: draw it on the card with an opaque halo */
-.work figure:has(:focus-visible) {
+/* ховер и клавиатурный фокус выглядят одинаково */
+.work figure:hover .work-thumb img,
+.work figure:has(:focus-visible) .work-thumb img { transform: scale(1.04); }
+.work figure:hover .work-arrow,
+.work figure:has(:focus-visible) .work-arrow { background: var(--blue-fill); transform: translate(2px, -2px); }
+.work figure:hover .work-title,
+.work figure:has(:focus-visible) .work-title { color: var(--blue-text); }
+/* кольцо не должно ложиться на скриншот: рисуем его на превью с непрозрачным гало */
+.work figure:has(:focus-visible) .work-thumb {
   outline: 3px solid var(--charcoal); outline-offset: 3px;
-  box-shadow: 0 0 0 3px var(--bg), 0 0 0 9px rgba(37,99,235,.35);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.09), 0 0 0 3px var(--bg), 0 0 0 9px rgba(37,99,235,.35);
 }
 .work figure:has(:focus-visible) .work-title a:focus-visible { outline: none; }
-/* fallback for browsers without :has() */
-.work-title a:focus-visible { outline: 3px solid var(--charcoal); outline-offset: 2px; border-radius: 4px; }
+/* фолбэк для браузеров без :has() */
+.work-title a:focus-visible { outline: 3px solid var(--charcoal); outline-offset: 3px; border-radius: 4px; }
 @media (forced-colors: active) {
-  .work figure { border: 1px solid CanvasText; }
-  .work figure:has(:focus-visible) { outline-color: Highlight; }
+  .work-thumb { border: 1px solid CanvasText; }
+  .work figure:has(:focus-visible) .work-thumb { outline-color: Highlight; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .work figure, .work-thumb img { transition: none; }
-  .work figure:hover, .work figure:has(:focus-visible) { transform: none; }
-  .work figure:hover .work-thumb img { transform: none; }
+  .work-thumb img, .work-arrow { transition: none; }
+  .work figure:hover .work-thumb img,
+  .work figure:has(:focus-visible) .work-thumb img { transform: none; }
+  .work figure:hover .work-arrow,
+  .work figure:has(:focus-visible) .work-arrow { transform: none; }
 }
-/* a card that has not revealed yet must not swallow its own focus ring */
+/* нераскрытая карточка не должна глотать своё фокус-кольцо */
 .js .reveal:focus-within { opacity: 1; transform: none; }
 @media (max-width: 760px) { .works-grid { grid-template-columns: 1fr; } }
 
