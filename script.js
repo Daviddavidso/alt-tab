@@ -308,12 +308,26 @@
     pt:{designTitle:'Design, não um template', designLead:'Uma interface sob medida para seu objetivo, impecável no celular, tablet e desktop.', socialsAria:'Redes sociais e mensageiros'}
   };
   Object.keys(DZ).forEach(function(k){ Object.assign(TR[k]||{}, DZ[k]); });
+  /* CTA under the tablet: label matches its real destination (the contact form) */
   var WB = {
-    ru:{worksCta:'Посмотреть все работы'}, en:{worksCta:'See all work'}, de:{worksCta:'Alle Arbeiten ansehen'},
-    fr:{worksCta:'Voir tous les projets'}, es:{worksCta:'Ver todos los trabajos'}, it:{worksCta:'Vedi tutti i lavori'},
-    pl:{worksCta:'Zobacz wszystkie prace'}, ro:{worksCta:'Vezi toate lucrările'}, pt:{worksCta:'Ver todos os trabalhos'}
+    ru:{designCta:'Заказать такой же дизайн'}, en:{designCta:'Order a design like this'}, de:{designCta:'So ein Design anfragen'},
+    fr:{designCta:'Commander un design comme ça'}, es:{designCta:'Quiero un diseño así'}, it:{designCta:'Voglio un design così'},
+    pl:{designCta:'Chcę taki design'}, ro:{designCta:'Vreau un design ca acesta'}, pt:{designCta:'Quero um design assim'}
   };
   Object.keys(WB).forEach(function(k){ Object.assign(TR[k]||{}, WB[k]); });
+  /* client revision: bolder design heading + footer line */
+  var RV = {
+    ru:{designTitle:'Дизайн рисуем с нуля под вашу задачу', designLead:'Каждый экран рисуем руками и вылизываем на телефоне, планшете и десктопе.', footerLove:'Делаем сайты, которые бесят конкурентов'},
+    en:{designTitle:'Every design drawn from scratch for your goal', designLead:'Every screen is drawn by hand and polished on phone, tablet and desktop.', footerLove:'Websites that annoy your competitors'},
+    de:{designTitle:'Jedes Design zeichnen wir von Grund auf für Ihr Ziel', designLead:'Jeden Screen zeichnen wir von Hand und feilen ihn auf Handy, Tablet und Desktop aus.', footerLove:'Websites, die die Konkurrenz nervös machen'},
+    fr:{designTitle:'Chaque design dessiné de zéro pour votre objectif', designLead:'Chaque écran est dessiné à la main et peaufiné sur mobile, tablette et desktop.', footerLove:'Des sites qui agacent vos concurrents'},
+    es:{designTitle:'Cada diseño lo dibujamos desde cero para tu objetivo', designLead:'Cada pantalla la dibujamos a mano y la pulimos en móvil, tablet y escritorio.', footerLove:'Webs que ponen nerviosa a la competencia'},
+    it:{designTitle:'Ogni design lo disegniamo da zero per il tuo obiettivo', designLead:'Ogni schermata la disegniamo a mano e la rifiniamo su mobile, tablet e desktop.', footerLove:'Siti che fanno innervosire i concorrenti'},
+    pl:{designTitle:'Każdy design rysujemy od zera pod twój cel', designLead:'Każdy ekran rysujemy ręcznie i dopieszczamy na telefonie, tablecie i desktopie.', footerLove:'Strony, które wkurzają konkurencję'},
+    ro:{designTitle:'Fiecare design îl desenăm de la zero pentru obiectivul tău', designLead:'Fiecare ecran îl desenăm manual și îl finisăm pe mobil, tabletă și desktop.', footerLove:'Site-uri care enervează concurența'},
+    pt:{designTitle:'Cada design é desenhado do zero para o seu objetivo', designLead:'Cada tela é desenhada à mão e polida no celular, tablet e desktop.', footerLove:'Sites que deixam a concorrência nervosa'}
+  };
+  Object.keys(RV).forEach(function(k){ Object.assign(TR[k]||{}, RV[k]); });
   /* testimonial names/monograms: Russian for ru, Western for every other locale */
   var REVN = {
     rev1Name:['Анна Гаврилова','Emma Carter'], rev1Mono:['АГ','EC'],

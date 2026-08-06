@@ -157,7 +157,7 @@ button { font: inherit; color: inherit; }
 .btn-sm { padding: 10px 20px; font-size: .95rem; }
 
 /* glowing "all projects" CTA */
-.works-cta { text-align: center; margin-top: clamp(32px, 5vw, 56px); }
+.works-cta { text-align: center; margin-top: clamp(4px, 1vw, 12px); }
 .btn-glow { animation: btn-glow-pulse 2.6s ease-in-out infinite; }
 @keyframes btn-glow-pulse {
   0%, 100% { box-shadow: 0 0 16px 1px rgba(37,99,235,.35); }
@@ -538,16 +538,28 @@ button { font: inherit; color: inherit; }
 .work-desc { margin-top: 10px; color: var(--granite); font-size: .98rem; }
 
 /* ---------- pricing (Pop Site: white cards, wash-blue featured) ---------- */
-.plans { margin-top: 22px; align-items: stretch; }
+.plans { margin-top: 54px; align-items: stretch; }
 .plan {
   position: relative;
   list-style: none; display: flex; flex-direction: column;
-  background: var(--page); border: 1px solid var(--border-soft); border-radius: var(--r-feature); box-shadow: var(--shadow-2);
+  background: var(--page); border: 1px solid transparent; border-radius: var(--r-feature); box-shadow: var(--shadow-2);
   padding: 34px 30px 36px;
   transition: transform .2s var(--ease), background .2s;
 }
 .plan:hover { transform: translateY(-4px); }
 .plan--featured { background: var(--wash); box-shadow: var(--shadow-2); }
+/* the border was the only card separator in forced colors / high contrast */
+@media (forced-colors: active) {
+  .plan { border: 1px solid CanvasText; }
+  .plan--featured { border: 2px solid Highlight; }
+}
+@media (prefers-contrast: more) {
+  .plan { border-color: #737782; }
+}
+/* on the featured wash the CTA fill is its own boundary, needs 3:1 against #1e2740 */
+.plan--featured .btn-solid,
+.plan--featured .plan-badge,
+.plan--featured .plan-feats li::before { background: #2f6cf0; border-color: #2f6cf0; }
 
 .plan-badge {
   position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
