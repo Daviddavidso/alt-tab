@@ -503,39 +503,71 @@ button { font: inherit; color: inherit; }
 /* ---------- formerly-dark sections now light ---------- */
 .section-dark { background: var(--page); }
 
-/* ---------- works ---------- */
+/* ---------- works / benchmarks ---------- */
 .works-grid { margin-top: 10px; }
-.work { list-style: none; }
+/* no overflow/clip on .work or figure: it would eat the focus ring */
+.work { list-style: none; scroll-margin-top: calc(var(--header-h) + 16px); }
 .work figure {
-  height: 100%;
-  background: var(--page); border: 1px solid var(--charcoal);
-  border-radius: var(--r-card); overflow: hidden;
+  position: relative; height: 100%; display: flex; flex-direction: column;
+  background: var(--page); border-radius: var(--r-card);
+  box-shadow: var(--shadow-2);
   transition: transform .2s var(--ease), background .2s;
 }
-.work:hover figure { transform: translateY(-3px); }
 .work-thumb {
-  display: block; aspect-ratio: 16 / 10; width: 100%;
-  border-bottom: 1px solid var(--charcoal);
+  display: block; width: 100%; aspect-ratio: 16 / 10;
+  border-radius: var(--r-card) var(--r-card) 0 0;
   background: var(--surface-soft);
-  position: relative; overflow: hidden;
+  overflow: hidden; /* only the image wrapper clips */
 }
-.work-thumb::before {
-  content: ""; position: absolute; left: 16px; right: 16px; top: 16px; height: 9px;
-  background: var(--charcoal); border-radius: 4px;
-}
-.work-thumb::after {
-  content: ""; position: absolute; left: 16px; right: 16px; top: 34px; bottom: 16px;
-  background: #fff; border: 1px solid var(--mist); border-radius: 8px;
+.work-thumb img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+  transition: transform .35s var(--ease);
 }
 .work figcaption { padding: 22px 24px 26px; }
-.work-meta { display: flex; align-items: center; gap: 12px; }
-.work-tag {
-  font-size: .72rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase;
-  color: var(--charcoal); border: 1px solid var(--charcoal); border-radius: 999px; padding: 4px 10px;
+.work-title { font-size: 1.25rem; font-weight: 500; letter-spacing: -.02em; color: var(--ink); }
+.work-title a { color: inherit; text-decoration: none; display: inline; }
+/* stretched hit area, the description below stays selectable */
+.work-title a::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: var(--r-card); }
+.work-kind { color: var(--granite); font-weight: 400; }
+/* corner chip instead of a trailing glyph: the arrow never gets orphaned onto its own line */
+.work-arrow {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  width: 32px; height: 32px; padding: 8px; border-radius: 50%;
+  color: #fff; background: rgba(14,16,20,.72); backdrop-filter: blur(6px);
+  transition: background .2s var(--ease);
 }
-.work-year { font-size: .82rem; color: var(--slate); }
-.work-title { margin-top: 14px; font-size: 1.3rem; font-weight: 500; letter-spacing: -.02em; color: var(--ink); }
-.work-desc { margin-top: 10px; color: var(--granite); font-size: .98rem; }
+.work figure:hover .work-arrow,
+.work figure:has(:focus-visible) .work-arrow { background: var(--blue-fill); }
+.work-desc { position: relative; z-index: 2; margin-top: 10px; color: var(--granite); font-size: .98rem; }
+.works-note { margin-top: 28px; text-align: center; color: var(--slate); font-size: .95rem; }
+.works-note a { color: var(--blue-text); text-decoration: underline; text-underline-offset: 3px; }
+
+/* hover and keyboard focus get the same treatment */
+.work figure:hover,
+.work figure:has(:focus-visible) { transform: translateY(-3px); background: var(--surface-soft); }
+.work figure:hover .work-thumb img { transform: scale(1.03); }
+.work figure:hover .work-title a,
+.work figure:has(:focus-visible) .work-title a { text-decoration: underline; text-underline-offset: 4px; }
+/* the ring must never sit on a screenshot: draw it on the card with an opaque halo */
+.work figure:has(:focus-visible) {
+  outline: 3px solid var(--charcoal); outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--bg), 0 0 0 9px rgba(37,99,235,.35);
+}
+.work figure:has(:focus-visible) .work-title a:focus-visible { outline: none; }
+/* fallback for browsers without :has() */
+.work-title a:focus-visible { outline: 3px solid var(--charcoal); outline-offset: 2px; border-radius: 4px; }
+@media (forced-colors: active) {
+  .work figure { border: 1px solid CanvasText; }
+  .work figure:has(:focus-visible) { outline-color: Highlight; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work figure, .work-thumb img { transition: none; }
+  .work figure:hover, .work figure:has(:focus-visible) { transform: none; }
+  .work figure:hover .work-thumb img { transform: none; }
+}
+/* a card that has not revealed yet must not swallow its own focus ring */
+.js .reveal:focus-within { opacity: 1; transform: none; }
+@media (max-width: 760px) { .works-grid { grid-template-columns: 1fr; } }
 
 /* ---------- pricing (Pop Site: white cards, wash-blue featured) ---------- */
 .plans { margin-top: 54px; align-items: stretch; }
